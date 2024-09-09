@@ -1,0 +1,11 @@
+Server=
+Main=
+Settings=
+Others=
+Exit=
+Style=
+Language=
+Menu=
+About=
+Russian=
+English=

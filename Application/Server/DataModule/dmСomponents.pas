@@ -4,7 +4,8 @@ interface
 
 uses
   System.SysUtils, System.Classes, FMX.StdActns, System.Actions, FMX.ActnList,
-  System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls;
+  System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls, IdBaseComponent,
+  IdComponent, IdCustomTCPServer, IdTCPServer, FMX.Forms;
 
 type
   TdmCompanents = class(TDataModule)
@@ -15,7 +16,9 @@ type
     actExit: TFileExit;
     sbLight: TStyleBook;
     sbDark: TStyleBook;
+    IdTCPServer: TIdTCPServer;
     Language: TLang;
+    procedure ChangeStyle(Theme:TStyleBook);
   private
     { Private declarations }
   public
@@ -32,5 +35,16 @@ implementation
 uses main;
 
 {$R *.dfm}
+
+{ TdmCompanents }
+
+//StyleBook
+procedure TdmCompanents.ChangeStyle(Theme: TStyleBook);
+var i:byte;
+begin
+ for i := 0 to Application.ComponentCount-1 do
+     if Application.Components[i] is TForm then
+     TForm(Application.Components[i]).StyleBook:=Theme;
+end;
 
 end.
