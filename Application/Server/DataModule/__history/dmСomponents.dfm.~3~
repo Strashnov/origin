@@ -1,0 +1,21 @@
+object DataModule1: TDataModule1
+  Height = 480
+  Width = 640
+  object alMenu: TActionList
+    Left = 48
+    Top = 24
+    object actMain: TAction
+      Text = 'actMain'
+      OnExecute = actMainExecute
+    end
+    object actSettings: TAction
+      Text = 'actSettings'
+    end
+    object FileExit: TFileExit
+      Category = 'File'
+      Hint = 'Quit|Quits the application'
+      ImageIndex = 43
+      ImageIndex = 43
+    end
+  end
+end

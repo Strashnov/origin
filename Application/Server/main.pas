@@ -37,4 +37,6 @@ implementation
 
 {$R *.fmx}
 
+uses dmÑomponents;
+
 end.

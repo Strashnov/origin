@@ -1,0 +1,16 @@
+program Server;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  main in 'main.pas' {formMain},
+  dm—omponents in 'DataModule\dm—omponents.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TformMain, formMain);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

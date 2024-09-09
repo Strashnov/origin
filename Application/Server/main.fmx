@@ -18,6 +18,7 @@ object formMain: TformMain
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'multiviewstyle'
+    Visible = False
     TabOrder = 2
     object lbMenu: TListBox
       Align = Client
@@ -27,39 +28,46 @@ object formMain: TformMain
       StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
       DisableFocusEffect = True
+      Images = dmCompanents.ImageList
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
       Viewport.Width = 250.000000000000000000
       Viewport.Height = 287.000000000000000000
       object lbiMenu: TListBoxItem
+        ImageIndex = 2
         Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'listboxitemleftdetail'
         TabOrder = 0
         Text = 'lbiMenu'
       end
       object lbiSettings: TListBoxItem
+        ImageIndex = 0
         Position.Y = 40.000000000000000000
         Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'listboxitemleftdetail'
         TabOrder = 1
         Text = 'lbiSettings'
       end
       object lbgfLineOne: TListBoxGroupFooter
         Position.Y = 80.000000000000000000
         Size.Width = 250.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Height = 20.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'listboxfooter'
         TabOrder = 2
-        Text = 'lbgfLineOne'
       end
       object lbiExit: TListBoxItem
-        Position.Y = 120.000000000000000000
+        ImageIndex = 1
+        Position.Y = 100.000000000000000000
         Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'listboxitemleftdetail'
         TabOrder = 3
         Text = 'lbiExit'
       end
@@ -27803,12 +27811,11 @@ object formMain: TformMain
       Size.Height = 193.000000000000000000
       Size.PlatformDefault = False
       Stroke.Color = claNull
+      Stroke.Thickness = 0.000000000000000000
     end
   end
   object panMainRight: TPanel
     Align = Client
-    Margins.Left = 250.000000000000000000
-    Margins.Right = -250.000000000000000000
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
@@ -27835,7 +27842,8 @@ object formMain: TformMain
         Align = Left
         AutoSize = True
         StyledSettings = [Family, FontColor]
-        Position.X = 80.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Position.X = 85.000000000000000000
         Size.Width = 61.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
