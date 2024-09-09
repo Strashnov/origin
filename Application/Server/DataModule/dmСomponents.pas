@@ -14,8 +14,8 @@ type
     actSettings: TAction;
     actExit: TFileExit;
     sbLight: TStyleBook;
-    Language: TLang;
     sbDark: TStyleBook;
+    Language: TLang;
   private
     { Private declarations }
   public

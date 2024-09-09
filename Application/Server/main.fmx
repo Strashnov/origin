@@ -36,7 +36,7 @@ object formMain: TformMain
       Viewport.Height = 485.000000000000000000
       object lbghMenu: TListBoxGroupHeader
         StyleLookup = 'listboxplainheader'
-        TabOrder = 4
+        TabOrder = 3
         Text = 'Menu'
       end
       object lbiMain: TListBoxItem
@@ -61,14 +61,11 @@ object formMain: TformMain
         Text = 'Settings'
         OnClick = lbiSettingsClick
       end
-      object lbgfOther: TListBoxGroupFooter
+      object lbghOther: TListBoxGroupHeader
         Position.Y = 99.000000000000000000
-        Size.Width = 250.000000000000000000
-        Size.Height = 19.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = 'listboxfooter'
-        TabOrder = 2
-        Text = 'Others'
+        StyleLookup = 'listboxplainheader'
+        TabOrder = 6
+        Text = 'Other'
       end
       object lbiAbout: TListBoxItem
         ImageIndex = 3
@@ -77,7 +74,7 @@ object formMain: TformMain
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
-        TabOrder = 6
+        TabOrder = 5
         Text = 'About'
       end
       object lbiExit: TListBoxItem
@@ -87,7 +84,7 @@ object formMain: TformMain
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
-        TabOrder = 3
+        TabOrder = 2
         Text = 'Exit'
         OnClick = lbiExitClick
       end
@@ -96,7 +93,7 @@ object formMain: TformMain
         Size.Width = 250.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
+        TabOrder = 4
         Text = 'MetropolisUIListBoxItem'
         Title = 'Alfa v 1.0.0'
         SubTitle = 'Author Strashnov Igor'
@@ -27894,10 +27891,14 @@ object formMain: TformMain
       Size.Width = 640.000000000000000000
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 1
+      TabIndex = 3
       TabOrder = 2
       TabPosition = PlatformDefault
       Sizes = (
+        640s
+        616s
+        640s
+        616s
         640s
         616s
         640s
@@ -27920,7 +27921,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 70.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
@@ -27940,34 +27941,99 @@ object formMain: TformMain
           DefaultItemStyles.GroupFooterStyle = ''
           Viewport.Width = 640.000000000000000000
           Viewport.Height = 616.000000000000000000
-          object ListBoxGroupHeader1: TListBoxGroupHeader
+          object lbghStyleBook: TListBoxGroupHeader
             StyleLookup = 'listboxplainheader'
             TabOrder = 0
-            Text = 'ListBoxGroupHeader1'
+            Text = 'Style'
           end
-          object ListBoxItem1: TListBoxItem
+          object lbiStyle: TListBoxItem
+            ItemData.Accessory = aMore
             Position.Y = 19.000000000000000000
             Size.Width = 640.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'listboxitemnodetail'
             TabOrder = 1
-            Text = 'ListBoxItem1'
+            Text = 'Style'
+            OnClick = lbiStyleClick
           end
-          object ListBoxGroupHeader2: TListBoxGroupHeader
+          object lbghLanguage: TListBoxGroupHeader
             Position.Y = 59.000000000000000000
             StyleLookup = 'listboxplainheader'
             TabOrder = 2
-            Text = 'ListBoxGroupHeader2'
+            Text = 'Language'
           end
-          object ListBoxItem2: TListBoxItem
+          object lbiLanguage: TListBoxItem
+            ItemData.Accessory = aMore
             Position.Y = 78.000000000000000000
             Size.Width = 640.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'listboxitemnodetail'
             TabOrder = 3
-            Text = 'ListBoxItem2'
+            Text = 'Language'
+            OnClick = lbiLanguageClick
+          end
+        end
+      end
+      object tiLanguage: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = False
+        Size.Width = 79.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'tiLanguage'
+      end
+      object tiStyle: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = True
+        Size.Width = 53.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'tiStyle'
+        object lbStyle: TListBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 616.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          DisableFocusEffect = True
+          Images = dmCompanents.ImageList
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 640.000000000000000000
+          Viewport.Height = 616.000000000000000000
+          object lbiRussian: TListBoxItem
+            ItemData.Accessory = aCheckmark
+            ImageIndex = 4
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 0
+            Text = 'Russian'
+          end
+          object lbiEnglish: TListBoxItem
+            ImageIndex = 5
+            Position.Y = 40.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 1
+            Text = 'English'
           end
         end
       end

@@ -23,19 +23,26 @@ type
     tiSettings: TTabItem;
     lbiMain: TListBoxItem;
     lbiSettings: TListBoxItem;
-    lbgfOther: TListBoxGroupFooter;
     lbiExit: TListBoxItem;
     lbSettings: TListBox;
-    ListBoxGroupHeader1: TListBoxGroupHeader;
-    ListBoxItem1: TListBoxItem;
-    ListBoxGroupHeader2: TListBoxGroupHeader;
-    ListBoxItem2: TListBoxItem;
+    lbghStyleBook: TListBoxGroupHeader;
+    lbiStyle: TListBoxItem;
+    lbghLanguage: TListBoxGroupHeader;
+    lbiLanguage: TListBoxItem;
     lbghMenu: TListBoxGroupHeader;
     MetropolisUIListBoxItem: TMetropolisUIListBoxItem;
     lbiAbout: TListBoxItem;
+    tiLanguage: TTabItem;
+    tiStyle: TTabItem;
+    lbStyle: TListBox;
+    lbiRussian: TListBoxItem;
+    lbiEnglish: TListBoxItem;
+    lbghOther: TListBoxGroupHeader;
     procedure lbiMainClick(Sender: TObject);
     procedure lbiSettingsClick(Sender: TObject);
     procedure lbiExitClick(Sender: TObject);
+    procedure lbiStyleClick(Sender: TObject);
+    procedure lbiLanguageClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,14 +61,24 @@ begin
   Application.Terminate; // Close main form
 end;
 
+procedure TformMain.lbiLanguageClick(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiLanguage; // Open style tab
+end;
+
 procedure TformMain.lbiMainClick(Sender: TObject);
 begin
-  Self.tcMain.ActiveTab := formMain.tiMain; // Open main tab
+  tcMain.ActiveTab := tiMain; // Open main tab
 end;
 
 procedure TformMain.lbiSettingsClick(Sender: TObject);
 begin
-  Self.tcMain.ActiveTab := formMain.tiSettings; // Open settings tab
+  tcMain.ActiveTab := tiSettings; // Open settings tab
+end;
+
+procedure TformMain.lbiStyleClick(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiStyle; // Open style tab
 end;
 
 end.
