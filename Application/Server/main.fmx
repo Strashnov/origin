@@ -18,7 +18,6 @@ object formMain: TformMain
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'multiviewstyle'
-    Visible = False
     TabOrder = 2
     object lbMenu: TListBox
       Align = Client
@@ -42,6 +41,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemleftdetail'
         TabOrder = 0
         Text = 'lbiMenu'
+        OnClick = lbiMenuClick
       end
       object lbiSettings: TListBoxItem
         ImageIndex = 0
@@ -52,6 +52,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemleftdetail'
         TabOrder = 1
         Text = 'lbiSettings'
+        OnClick = lbiSettingsClick
       end
       object lbgfLineOne: TListBoxGroupFooter
         Position.Y = 80.000000000000000000
@@ -70,6 +71,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemleftdetail'
         TabOrder = 3
         Text = 'lbiExit'
+        OnClick = lbiExitClick
       end
     end
     object recImageMenu: TRectangle
@@ -27816,6 +27818,8 @@ object formMain: TformMain
   end
   object panMainRight: TPanel
     Align = Client
+    Margins.Left = 250.000000000000000000
+    Margins.Right = -250.000000000000000000
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False

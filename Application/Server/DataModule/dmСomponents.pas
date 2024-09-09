@@ -4,17 +4,16 @@ interface
 
 uses
   System.SysUtils, System.Classes, FMX.StdActns, System.Actions, FMX.ActnList,
-  System.ImageList, FMX.ImgList;
+  System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls;
 
 type
   TdmCompanents = class(TDataModule)
+    ImageList: TImageList;
     alMenu: TActionList;
     actMain: TAction;
     actSettings: TAction;
-    FileExit: TFileExit;
-    ImageList: TImageList;
-    procedure actMainExecute(Sender: TObject);
-    procedure actSettingsExecute(Sender: TObject);
+    actExit: TFileExit;
+    sbLight: TStyleBook;
   private
     { Private declarations }
   public
@@ -31,15 +30,5 @@ implementation
 uses main;
 
 {$R *.dfm}
-
-procedure TdmCompanents.actMainExecute(Sender: TObject);
-begin
-  formMain.tcMain.ActiveTab := formMain.tiMain; // Open main tab
-end;
-
-procedure TdmCompanents.actSettingsExecute(Sender: TObject);
-begin
-  formMain.tcMain.ActiveTab := formMain.tiSettings; // Open settings tab
-end;
 
 end.
