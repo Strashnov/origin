@@ -5,7 +5,9 @@ interface
 uses
   System.SysUtils, System.Classes, FMX.StdActns, System.Actions, FMX.ActnList,
   System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls, IdBaseComponent,
-  IdComponent, IdCustomTCPServer, IdTCPServer, FMX.Forms;
+  IdComponent, IdCustomTCPServer, IdTCPServer, FMX.Forms, IdServerIOHandler,
+  IdServerIOHandlerSocket, IdServerIOHandlerStack, IdIntercept,
+  IdCompressionIntercept;
 
 type
   TdmCompanents = class(TDataModule)
@@ -18,6 +20,8 @@ type
     sbDark: TStyleBook;
     IdTCPServer: TIdTCPServer;
     Language: TLang;
+    IdServerCompressionIntercept: TIdServerCompressionIntercept;
+    IdServerIOHandlerStack: TIdServerIOHandlerStack;
     procedure ChangeStyle(Theme:TStyleBook);
   private
     { Private declarations }
