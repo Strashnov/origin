@@ -2,8 +2,9 @@ object formMain: TformMain
   Left = 0
   Top = 0
   Caption = 'formMain'
-  ClientHeight = 480
+  ClientHeight = 678
   ClientWidth = 640
+  StyleBook = dmCompanents.sbLight
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -15,14 +16,14 @@ object formMain: TformMain
     Mode = Drawer
     NavigationPaneOptions.CollapsedWidth = 41.000000000000000000
     Size.Width = 250.000000000000000000
-    Size.Height = 480.000000000000000000
+    Size.Height = 678.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'multiviewstyle'
     TabOrder = 2
     object lbMenu: TListBox
       Align = Client
       Size.Width = 250.000000000000000000
-      Size.Height = 287.000000000000000000
+      Size.Height = 485.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
@@ -32,46 +33,74 @@ object formMain: TformMain
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
       Viewport.Width = 250.000000000000000000
-      Viewport.Height = 287.000000000000000000
-      object lbiMenu: TListBoxItem
+      Viewport.Height = 485.000000000000000000
+      object lbghMenu: TListBoxGroupHeader
+        StyleLookup = 'listboxplainheader'
+        TabOrder = 4
+        Text = 'Menu'
+      end
+      object lbiMain: TListBoxItem
         ImageIndex = 2
+        Position.Y = 19.000000000000000000
         Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'listboxitemleftdetail'
+        StyleLookup = 'listboxitemnodetail'
         TabOrder = 0
-        Text = 'lbiMenu'
-        OnClick = lbiMenuClick
+        Text = 'Main'
+        OnClick = lbiMainClick
       end
       object lbiSettings: TListBoxItem
         ImageIndex = 0
-        Position.Y = 40.000000000000000000
+        Position.Y = 59.000000000000000000
         Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'listboxitemleftdetail'
+        StyleLookup = 'listboxitemnodetail'
         TabOrder = 1
-        Text = 'lbiSettings'
+        Text = 'Settings'
         OnClick = lbiSettingsClick
       end
-      object lbgfLineOne: TListBoxGroupFooter
-        Position.Y = 80.000000000000000000
+      object lbgfOther: TListBoxGroupFooter
+        Position.Y = 99.000000000000000000
         Size.Width = 250.000000000000000000
-        Size.Height = 20.000000000000000000
+        Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxfooter'
         TabOrder = 2
+        Text = 'Others'
       end
-      object lbiExit: TListBoxItem
-        ImageIndex = 1
-        Position.Y = 100.000000000000000000
+      object lbiAbout: TListBoxItem
+        ImageIndex = 3
+        Position.Y = 118.000000000000000000
         Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'listboxitemleftdetail'
+        StyleLookup = 'listboxitemnodetail'
+        TabOrder = 6
+        Text = 'About'
+      end
+      object lbiExit: TListBoxItem
+        ImageIndex = 1
+        Position.Y = 158.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemnodetail'
         TabOrder = 3
-        Text = 'lbiExit'
+        Text = 'Exit'
         OnClick = lbiExitClick
+      end
+      object MetropolisUIListBoxItem: TMetropolisUIListBoxItem
+        ClipChildren = True
+        Size.Width = 250.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'MetropolisUIListBoxItem'
+        Title = 'Alfa v 1.0.0'
+        SubTitle = 'Author Strashnov Igor'
+        Description = 'The server part'
       end
     end
     object recImageMenu: TRectangle
@@ -27821,7 +27850,7 @@ object formMain: TformMain
     Margins.Left = 250.000000000000000000
     Margins.Right = -250.000000000000000000
     Size.Width = 640.000000000000000000
-    Size.Height = 480.000000000000000000
+    Size.Height = 678.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'panelstyle'
     TabOrder = 1
@@ -27863,24 +27892,24 @@ object formMain: TformMain
     object tcMain: TTabControl
       Align = Client
       Size.Width = 640.000000000000000000
-      Size.Height = 440.000000000000000000
+      Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 0
+      TabIndex = 1
       TabOrder = 2
       TabPosition = PlatformDefault
       Sizes = (
         640s
-        414s
+        616s
         640s
-        414s)
+        616s)
       object tiMain: TTabItem
         CustomIcon = <
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 54.000000000000000000
-        Size.Height = 26.000000000000000000
+        Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
@@ -27891,13 +27920,56 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 70.000000000000000000
-        Size.Height = 26.000000000000000000
+        Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
         Text = 'tiSettings'
+        object lbSettings: TListBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 616.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 640.000000000000000000
+          Viewport.Height = 616.000000000000000000
+          object ListBoxGroupHeader1: TListBoxGroupHeader
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 0
+            Text = 'ListBoxGroupHeader1'
+          end
+          object ListBoxItem1: TListBoxItem
+            Position.Y = 19.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 1
+            Text = 'ListBoxItem1'
+          end
+          object ListBoxGroupHeader2: TListBoxGroupHeader
+            Position.Y = 59.000000000000000000
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 2
+            Text = 'ListBoxGroupHeader2'
+          end
+          object ListBoxItem2: TListBoxItem
+            Position.Y = 78.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 3
+            Text = 'ListBoxItem2'
+          end
+        end
       end
     end
   end

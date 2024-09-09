@@ -21,11 +21,19 @@ type
     recImageMenu: TRectangle;
     tiMain: TTabItem;
     tiSettings: TTabItem;
-    lbiMenu: TListBoxItem;
+    lbiMain: TListBoxItem;
     lbiSettings: TListBoxItem;
-    lbgfLineOne: TListBoxGroupFooter;
+    lbgfOther: TListBoxGroupFooter;
     lbiExit: TListBoxItem;
-    procedure lbiMenuClick(Sender: TObject);
+    lbSettings: TListBox;
+    ListBoxGroupHeader1: TListBoxGroupHeader;
+    ListBoxItem1: TListBoxItem;
+    ListBoxGroupHeader2: TListBoxGroupHeader;
+    ListBoxItem2: TListBoxItem;
+    lbghMenu: TListBoxGroupHeader;
+    MetropolisUIListBoxItem: TMetropolisUIListBoxItem;
+    lbiAbout: TListBoxItem;
+    procedure lbiMainClick(Sender: TObject);
     procedure lbiSettingsClick(Sender: TObject);
     procedure lbiExitClick(Sender: TObject);
   private
@@ -46,7 +54,7 @@ begin
   Application.Terminate; // Close main form
 end;
 
-procedure TformMain.lbiMenuClick(Sender: TObject);
+procedure TformMain.lbiMainClick(Sender: TObject);
 begin
   Self.tcMain.ActiveTab := formMain.tiMain; // Open main tab
 end;
