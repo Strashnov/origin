@@ -24,42 +24,29 @@ object formMain: TformMain
       Size.Width = 250.000000000000000000
       Size.Height = 287.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
       DisableFocusEffect = True
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 250.000000000000000000
-      Viewport.Height = 287.000000000000000000
+      Viewport.Width = 246.000000000000000000
+      Viewport.Height = 283.000000000000000000
       object lbiMenu: TListBoxItem
-        Size.Width = 250.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
         TabOrder = 0
         Text = 'lbiMenu'
       end
       object lbiSettings: TListBoxItem
-        Position.Y = 40.000000000000000000
-        Size.Width = 250.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
+        Position.Y = 19.000000000000000000
         TabOrder = 1
         Text = 'lbiSettings'
       end
       object lbgfLineOne: TListBoxGroupFooter
-        Position.Y = 80.000000000000000000
-        Size.Width = 250.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
+        Position.Y = 38.000000000000000000
         TabOrder = 2
         Text = 'lbgfLineOne'
       end
       object lbiExit: TListBoxItem
-        Position.Y = 120.000000000000000000
-        Size.Width = 250.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
+        Position.Y = 57.000000000000000000
         TabOrder = 3
         Text = 'lbiExit'
       end

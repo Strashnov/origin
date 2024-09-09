@@ -18,12 +18,6 @@ type
     lbMenu: TListBox;
     labNamePrograms: TLabel;
     recImageMenu: TRectangle;
-    tiMain: TTabItem;
-    tiSettings: TTabItem;
-    lbiMenu: TListBoxItem;
-    lbiSettings: TListBoxItem;
-    lbgfLineOne: TListBoxGroupFooter;
-    lbiExit: TListBoxItem;
   private
     { Private declarations }
   public
