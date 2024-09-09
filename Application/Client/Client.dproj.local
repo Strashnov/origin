@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024.09.09 18:35:50.853,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024.09.09 18:36:42.145,C:\Sandbox\Application\Client\main.fmx=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2024.09.09 18:36:42.145,C:\Sandbox\Application\Client\main.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024.09.09 18:36:51.620,C:\Sandbox\Application\Client\Client.dproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024.09.09 18:37:04.126,=C:\Sandbox\Application\Client\Library\DistanceByCoordinates.pas</Transaction>
+  </Transactions>
+  <ActiveMobileDevice>   <NoProfile Android64="emulator-5554"/>
+  </ActiveMobileDevice>
+</BorlandProject>
