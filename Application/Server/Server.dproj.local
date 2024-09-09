@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.384,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Sandbox\Server\Server.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.856,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Sandbox\Server\main.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.856,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Sandbox\Server\main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.123,C:\Sandbox\Application\Server\Unit1.pas=C:\Sandbox\Application\Server\DataModule\dmСomponents.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.856,C:\Sandbox\Server\main.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.384,C:\Sandbox\Server\Server.dproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.214,=C:\Sandbox\Application\Server\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.856,C:\Sandbox\Server\main.fmx=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.123,C:\Sandbox\Application\Server\Unit1.dfm=C:\Sandbox\Application\Server\DataModule\dmСomponents.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.558,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024.09.09 13:54:44.214,=C:\Sandbox\Application\Server\Unit1.pas</Transaction>
-    <Transaction>2024.09.09 13:59:10.123,C:\Sandbox\Application\Server\DataModule\dmСomponents.pas=C:\Sandbox\Application\Server\Unit1.pas</Transaction>
-    <Transaction>2024.09.09 13:59:10.123,C:\Sandbox\Application\Server\DataModule\dmСomponents.dfm=C:\Sandbox\Application\Server\Unit1.dfm</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android64=""/>
+		<NoProfile Android64="emulator-5554" Android="emulator-5554"/>
 	</ActiveMobileDevice>
 </BorlandProject>
