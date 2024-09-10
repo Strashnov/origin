@@ -15,7 +15,6 @@ uses
 type
   TformClient = class(TForm)
     ActionList: TActionList;
-    Exit: TFileExit;
     ImageList: TImageList;
     IdTCPClient: TIdTCPClient;
     IdIOHandlerStack: TIdIOHandlerStack;
@@ -29,8 +28,8 @@ type
     lbMenu: TListBox;
     recImageMenu: TRectangle;
     lbghMenu: TListBoxGroupHeader;
-    ListBoxItem1: TListBoxItem;
-    ListBoxGroupHeader2: TListBoxGroupHeader;
+    lbiMain: TListBoxItem;
+    lbghLineOne: TListBoxGroupHeader;
     lbiExit: TListBoxItem;
     tcMain: TTabControl;
     tiMain: TTabItem;
@@ -40,13 +39,15 @@ type
     lbStyle: TListBox;
     lbiLight: TListBoxItem;
     lbiDark: TListBoxItem;
-    procedure ExitCanActionExec(Sender: TCustomAction; var CanExec: Boolean);
-    procedure lbiExitClick(Sender: TObject);
+    tiSettings: TTabItem;
+    lbiSettings: TListBoxItem;
+    actExit: TAction;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure btnCoordinatsClick(Sender: TObject);
+    procedure actExitExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +64,11 @@ implementation
 
 uses DistanceByCoordinates;
 
+procedure TformClient.actExitExecute(Sender: TObject);
+begin
+  Application.Terminate; // Close programms
+end;
+
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
 begin
@@ -73,17 +79,6 @@ begin
     IdTCPClient.Disconnect;
   end;
 
-end;
-
-procedure TformClient.ExitCanActionExec(Sender: TCustomAction;
-  var CanExec: Boolean);
-begin
-  Application.Terminate; // Close programms
-end;
-
-procedure TformClient.lbiExitClick(Sender: TObject);
-begin
-  Application.Terminate; // Exit
 end;
 
 procedure TformClient.pbMainMouseDown(Sender: TObject; Button: TMouseButton;

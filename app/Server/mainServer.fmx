@@ -49,7 +49,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 0
         Text = 'Main'
-        OnClick = lbiMainClick
+        OnClick = actMainExecute
       end
       object lbiSettings: TListBoxItem
         ImageIndex = 0
@@ -60,7 +60,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 1
         Text = 'Settings'
-        OnClick = lbiSettingsClick
+        OnClick = actSettingsExecute
       end
       object lbghOther: TListBoxGroupHeader
         Position.Y = 99.000000000000000000
@@ -77,7 +77,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 5
         Text = 'About'
-        OnClick = lbiAboutClick
+        OnClick = actAboutExecute
       end
       object lbiExit: TListBoxItem
         ImageIndex = 1
@@ -88,7 +88,7 @@ object formMain: TformMain
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 2
         Text = 'Exit'
-        OnClick = lbiExitClick
+        OnClick = actExitExecute
       end
       object MetropolisUIListBoxItem: TMetropolisUIListBoxItem
         ClipChildren = True
@@ -27892,28 +27892,28 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 3
+      TabIndex = 0
       TabOrder = 2
-      TabPosition = PlatformDefault
+      TabPosition = None
       Sizes = (
         640s
-        616s
+        638s
         640s
-        616s
+        638s
         640s
-        616s
+        638s
         640s
-        616s
+        638s
         640s
-        616s)
+        638s)
       object tiMain: TTabItem
         CustomIcon = <
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
-        Size.Width = 54.000000000000000000
-        Size.Height = 22.000000000000000000
+        IsSelected = True
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'tabitemstyle'
         TabOrder = 0
@@ -27925,11 +27925,11 @@ object formMain: TformMain
           DataDetectorTypes = []
           Align = Client
           Size.Width = 640.000000000000000000
-          Size.Height = 616.000000000000000000
+          Size.Height = 638.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           Viewport.Width = 638.000000000000000000
-          Viewport.Height = 614.000000000000000000
+          Viewport.Height = 636.000000000000000000
         end
       end
       object tiSettings: TTabItem
@@ -27938,8 +27938,8 @@ object formMain: TformMain
           end>
         TextSettings.Trimming = None
         IsSelected = False
-        Size.Width = 70.000000000000000000
-        Size.Height = 22.000000000000000000
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'tabitemstyle'
         TabOrder = 0
@@ -27949,7 +27949,7 @@ object formMain: TformMain
         object lbSettings: TListBox
           Align = Client
           Size.Width = 640.000000000000000000
-          Size.Height = 616.000000000000000000
+          Size.Height = 638.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'transparentlistboxstyle'
           TabOrder = 0
@@ -27958,7 +27958,7 @@ object formMain: TformMain
           DefaultItemStyles.GroupHeaderStyle = ''
           DefaultItemStyles.GroupFooterStyle = ''
           Viewport.Width = 640.000000000000000000
-          Viewport.Height = 616.000000000000000000
+          Viewport.Height = 638.000000000000000000
           object lbghStyleBook: TListBoxGroupHeader
             StyleLookup = 'listboxplainheader'
             TabOrder = 0
@@ -28010,7 +28010,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 54
+              TabOrder = 46
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28034,7 +28034,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 54
+              TabOrder = 46
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28054,8 +28054,8 @@ object formMain: TformMain
           end>
         TextSettings.Trimming = None
         IsSelected = False
-        Size.Width = 79.000000000000000000
-        Size.Height = 22.000000000000000000
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'tabitemstyle'
         TabOrder = 0
@@ -28065,7 +28065,7 @@ object formMain: TformMain
         object lbLanguage: TListBox
           Align = Client
           Size.Width = 640.000000000000000000
-          Size.Height = 616.000000000000000000
+          Size.Height = 638.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'transparentlistboxstyle'
           TabOrder = 0
@@ -28075,7 +28075,7 @@ object formMain: TformMain
           DefaultItemStyles.GroupHeaderStyle = ''
           DefaultItemStyles.GroupFooterStyle = ''
           Viewport.Width = 640.000000000000000000
-          Viewport.Height = 616.000000000000000000
+          Viewport.Height = 638.000000000000000000
           object lbiRussian: TListBoxItem
             ItemData.Accessory = aCheckmark
             ImageIndex = 4
@@ -28105,9 +28105,9 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
-        Size.Width = 53.000000000000000000
-        Size.Height = 22.000000000000000000
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'tabitemstyle'
         TabOrder = 0
@@ -28117,7 +28117,7 @@ object formMain: TformMain
         object lbStyle: TListBox
           Align = Client
           Size.Width = 640.000000000000000000
-          Size.Height = 616.000000000000000000
+          Size.Height = 638.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'transparentlistboxstyle'
           TabOrder = 0
@@ -28127,7 +28127,7 @@ object formMain: TformMain
           DefaultItemStyles.GroupHeaderStyle = ''
           DefaultItemStyles.GroupFooterStyle = ''
           Viewport.Width = 640.000000000000000000
-          Viewport.Height = 616.000000000000000000
+          Viewport.Height = 638.000000000000000000
           object lbiLight: TListBoxItem
             ItemData.Accessory = aCheckmark
             ImageIndex = 7
@@ -28158,8 +28158,8 @@ object formMain: TformMain
           end>
         TextSettings.Trimming = None
         IsSelected = False
-        Size.Width = 60.000000000000000000
-        Size.Height = 22.000000000000000000
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'tabitemstyle'
         TabOrder = 0
@@ -29662,6 +29662,39 @@ object formMain: TformMain
           TextSettings.Font.Size = 16.000000000000000000
         end
       end
+    end
+  end
+  object alMenu: TActionList
+    Images = dmCompanents.ImageList
+    Left = 40
+    Top = 600
+    object actMain: TAction
+      Category = 'File'
+      Text = 'Main'
+      ImageIndex = 2
+      OnExecute = actMainExecute
+      ImageIndex = 2
+    end
+    object actSettings: TAction
+      Category = 'File'
+      Text = 'Settings'
+      ImageIndex = 0
+      OnExecute = actSettingsExecute
+      ImageIndex = 0
+    end
+    object actExit: TAction
+      Category = 'File'
+      Text = 'Exit'
+      ImageIndex = 1
+      OnExecute = actExitExecute
+      ImageIndex = 1
+    end
+    object actAbout: TAction
+      Category = 'File'
+      Text = 'About'
+      ImageIndex = 3
+      OnExecute = actAboutExecute
+      ImageIndex = 3
     end
   end
 end

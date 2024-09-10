@@ -12,10 +12,6 @@ uses
 type
   TdmCompanents = class(TDataModule)
     ImageList: TImageList;
-    alMenu: TActionList;
-    actMain: TAction;
-    actSettings: TAction;
-    actExit: TFileExit;
     sbLight: TStyleBook; // Light theme
     sbDark: TStyleBook; // Dark theme
     IdTCPServer: TIdTCPServer;
@@ -39,7 +35,7 @@ implementation
 
 {%CLASSGROUP 'FMX.Controls.TControl'}
 
-uses main;
+uses mainServer;
 
 {$R *.dfm}
 { TdmCompanents }
