@@ -1,0 +1,309 @@
+object formClient: TformClient
+  Left = 0
+  Top = 0
+  Caption = 'Client'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object mvMenu: TMultiView
+    TargetControl = panMain
+    DrawerOptions.Mode = PushingDetailView
+    MasterButton = sbMenu
+    Mode = Drawer
+    Size.Width = 250.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 6
+    object lbMenu: TListBox
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 335.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 246.000000000000000000
+      Viewport.Height = 331.000000000000000000
+      object lbghMenu: TListBoxGroupHeader
+        StyleLookup = 'listboxplainheader'
+        TabOrder = 0
+        Text = 'Menu'
+      end
+      object ListBoxItem1: TListBoxItem
+        Position.Y = 19.000000000000000000
+        Size.Width = 246.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemnodetail'
+        TabOrder = 1
+        Text = 'ListBoxItem1'
+      end
+      object ListBoxGroupHeader2: TListBoxGroupHeader
+        Position.Y = 59.000000000000000000
+        StyleLookup = 'listboxplainheader'
+        TabOrder = 2
+        Text = 'ListBoxGroupHeader2'
+      end
+      object lbiExit: TListBoxItem
+        Position.Y = 78.000000000000000000
+        Size.Width = 246.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemnodetail'
+        TabOrder = 3
+        Text = 'Exit'
+        OnClick = lbiExitClick
+      end
+    end
+    object recImageMenu: TRectangle
+      Align = Top
+      Size.Width = 250.000000000000000000
+      Size.Height = 145.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      Stroke.Thickness = 0.000000000000000000
+    end
+  end
+  object panMain: TPanel
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'panelstyle'
+    TabOrder = 5
+    object tbMenu: TToolBar
+      Size.Width = 640.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toolbarstyle'
+      TabOrder = 5
+      object sbMenu: TSpeedButton
+        Align = MostLeft
+        Size.Width = 80.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'detailstoolbutton'
+        Text = 'sbMenu'
+        TextSettings.Trimming = None
+      end
+      object btnCoordinats: TButton
+        Align = Center
+        Size.Width = 129.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'btnCoordinats'
+        TextSettings.Trimming = None
+        OnClick = btnCoordinatsClick
+      end
+      object labStatusBar: TLabel
+        Align = MostRight
+        AutoSize = True
+        Margins.Left = 10.000000000000000000
+        Position.X = 624.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = '0,0'
+        TabOrder = 0
+      end
+      object labNamePrograms: TLabel
+        Align = Left
+        AutoSize = True
+        StyledSettings = [Family, FontColor]
+        Position.X = 80.000000000000000000
+        Size.Width = 55.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'Client'
+        TabOrder = 7
+      end
+    end
+    object tcMain: TTabControl
+      Align = Client
+      Size.Width = 640.000000000000000000
+      Size.Height = 440.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabcontrolstyle'
+      TabIndex = 0
+      TabOrder = 6
+      TabPosition = PlatformDefault
+      Sizes = (
+        640s
+        414s
+        640s
+        414s)
+      object tiMain: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = True
+        Size.Width = 54.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'tabitemstyle'
+        TabOrder = 0
+        Text = 'tiMain'
+        ExplicitSize.cx = 54.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object pbMain: TPaintBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 414.000000000000000000
+          Size.PlatformDefault = False
+          OnMouseDown = pbMainMouseDown
+          OnMouseUp = pbMainMouseUp
+        end
+      end
+      object TabItem2: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = False
+        Size.Width = 69.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'tabitemstyle'
+        TabOrder = 0
+        Text = 'TabItem2'
+        ExplicitSize.cx = 69.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+      end
+    end
+  end
+  object ActionList: TActionList
+    Images = ImageList
+    Left = 432
+    Top = 384
+    object Exit: TFileExit
+      Category = 'File'
+      Hint = 'Quit|Quits the application'
+      ImageIndex = 0
+      OnCanActionExec = ExitCanActionExec
+      ImageIndex = 0
+    end
+  end
+  object ImageList: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 40
+        MultiResBitmap.Width = 40
+        MultiResBitmap = <
+          item
+            Width = 40
+            Height = 40
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000280000002808060000008CFEB8
+              6D0000000473424954080808087C0864880000069E494441545885CD986D6C14
+              C719C7FF33BB77B7BB77B777E797B3CD8BC12F18B089229354E1A5A594446022
+              A108A9692355FDD02F25AAAA96360AA054A26E3FD0D0F4439B34AAD28F51D5AA
+              91AA241005434A696808901ADAA2C6808913E3201F3EDBE7BBDBBDBDB36F77A6
+              1FD677D8C673BEB34D95FF97D1CD3EF3CC6F669F7D66EE01BEE0228B1DB8FB17
+              971E21843FEE91E4C741B09E31563BC31FA7948E02FC869DB7CF72899C3D7D68
+              EBD5070EB8B3FB5CC0A7AA0764891E9428A9AEAF8D90DA88AE04FD0A34C5778F
+              0E80959D8461E5101F4FE5EE8E2539E77CCCB69D5F33497BEDCCF30F67961570
+              67F73959D5D48394909FD656E9B4754DBD5613D2CB5F1E0746930606866299D1
+              448A73428E5AA6F5CADFBBBF662F1970CF8B1F75C8949F08EB5A7D677B9316D0
+              D432A9E69791C9E24ADF679669E6869DBCF3D4A917B6F42D1A70EFF14B5F2784
+              BCBEA9ADD1D7B42A4A171DB073C4017CFAF908FBF8D6E79300FFF6BB87B6FCA5
+              62C03DC72F7DC72BD357B7776E50C3BA7F99D0662B913271E1EA8D1C7370E0D4
+              91C75E2F1BB0EBA50FF7CB44FEE38E2FB52BBABFFC57BAAF8D800378A79F973D
+              266D5A78FF9FD7730E73BED97378EB89B9CFE9DC8E278E5FDC48B9F487ED9BD7
+              570407002B82042B839505821ED0B06D739B4209FDD393C72EB79504DCD97D4E
+              56A87C62535BA312D103154DB414558782E8685DAD100F39F9F41B6F484240BF
+              E23FA8077D2B9B5745EFDBD907ADE6C63AAAFBD5D599C1C6EFCFEC2F82EC7EE9
+              3F7E48FC68E7C6E6A5E591458A00E86C5FAB82909FEFEBEED5EE03A4B00ED455
+              8768B044DCF93DC0373A28B6AFAE3CE17CB991E0994D1441AFD8460F68A8AB0A
+              515BB5BF3B1B90732211E9B9756B5708F3894C813D2D141105F04A222BB1BC12
+              10F201BB5B28E41201B46E6D438048E4C7B300BB7E75F9215992F448897CD759
+              4F50EB071259E083A1F2D34841FFB8CD3191036A34D797489150001E2A45F61E
+              BBD45E04240EEF6AA80DCBA2418A0C3C14759D9E1F62C8B38AF99067F716B629
+              4AE013CC4600D4D786254E795711D0234BBB6AC24145E4BC294CE091803B698E
+              11B372B882860D8E6183C32BB93E45AA09EBAAC72BEF2A0232A0BDD4C7D11872
+              DB8189C5C315F449C26D57EB629B60400163BC03006400600EAF5615F1E71551
+              DDD5C6CCD2B177D7742F02A5E4FA20A8560944D6AACF0BC659CD3D40309F2C89
+              3F4DBFC76D3353A5277FFBE6C2C159F0A19548371E5902675C05669E2425521B
+              5FD8A4622DEC8B70601A90824EDAB62334B5F26EEB2FB1EA721598F66196781B
+              79DB01A1C815018944E2D9DCA4704022EBEEE18A0A6F2AF3A961DAC7444E1CAD
+              566E0A12A5F122A004DC343239E180DB49B76D892C990FAD1117703029B63133
+              391042AE1701A798733A3E91CE8A060C2639A69CC5DDF7666AA54ED01004261D
+              D7A748F1F1943595CFF7140141C8D991B194231A32E900FFBEEB3EFDEA1A0245
+              78E688A5C8C08E467771FF8AB90B9E4F1C403C9162D4A17F2B02F63CBFE59AED
+              D8E389A4219CE05A9C239E01823EA0AB850A8F2A11DCDE560ADD078C6680FFC6
+              C5BB379E4CC3719CD1C2BFBD629A71387BF9D660CC120D7418707A80C19802EA
+              02C0FEF5142B820BC3350481FD1B28A27EF7CBED196010BE2A00FD83B18CC3F8
+              CB85DFC57D60D05E1B4DA4BB8D4C16A263CFCA036FDE60D8D34C511700F6B551
+              C44C6020C111333952D3DF99DF0BAC0C12B454A118B3F18CBBC042CA9A4F69D3
+              C2D884E1C859F9F785BE5911DFF5CBCB3FAAD2B59FED78B4BDE4DE50E2DE481E
+              69200BDE0DA7A6E3F75A9CC32971D07000EF7FD4974E19C64F4E1DDEF6DB42FF
+              AC48CA59D62B29429EFDF44E5C6B5E15154ECD38706D84E3E638475398A0290C
+              441402BF17E01C30A6DCDC39940206531C930B16388081DB771D23931D0E34DD
+              F9DDCCFEFB72C613C72F6EF412DAFB95473768FFAF7F76E3290317AEDCB06093
+              CE775F78AC7FE6B3FB2EDF7F3DBCF5BACD9D6F5DB872D34A6784A971D994362D
+              7C78B5DFB2197F662EDCBC800070E6F0B6B76CC6BF77BEB7CF4AA6CBAE9455AC
+              44CAC4F9DEBEACCDD8B3678E6C3D399F4DC96361F78B17F77A24FAE78E758D6A
+              D3AAA8BCACC5A3A111BB6F6028EB38ECE99E23DB4E8B6C179CF3C96397DB8817
+              27437EAD617347537039CA6FBD1F7F66186676380FB6EFBD435B6E95B22FBB80
+              A928CA0F2825DDD1EA106D5D53EF5F4C01F393DB31737422CDC0F951CBCABEBA
+              2C05CC39A0019FAA1EF048F4878490AAFA9A30895687B44209D8E371B3563E6F
+              CF2C016762634980F171DB717EF3404AC0F3A9504497656917E16873388F32C6
+              FC700BE8964410E720FD8EBDB422FA175EFF03A6B1966EBDA4F6240000000049
+              454E44AE426082}
+            FileName = 'C:\Sandbox\Files for the project\icon\shutdown_40px.png'
+          end>
+        Name = 'Exit'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'Exit'
+            SourceRect.Right = 40.000000000000000000
+            SourceRect.Bottom = 40.000000000000000000
+          end>
+      end>
+    Left = 512
+    Top = 384
+  end
+  object IdTCPClient: TIdTCPClient
+    Intercept = IdCompressionIntercept
+    IOHandler = IdIOHandlerStack
+    ConnectTimeout = 0
+    Host = '192.168.0.107'
+    Port = 7
+    ReadTimeout = -1
+    Left = 336
+    Top = 376
+  end
+  object IdIOHandlerStack: TIdIOHandlerStack
+    Destination = '192.168.0.107:7'
+    Host = '192.168.0.107'
+    Intercept = IdCompressionIntercept
+    MaxLineAction = maException
+    Port = 7
+    DefaultPort = 0
+    Left = 224
+    Top = 376
+  end
+  object IdCompressionIntercept: TIdCompressionIntercept
+    CompressionLevel = 0
+    Left = 104
+    Top = 376
+  end
+end

@@ -297,7 +297,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="main.pas">
+        <DCCReference Include="mainClient.pas">
             <Form>formClient</Form>
             <FormType>fmx</FormType>
         </DCCReference>
