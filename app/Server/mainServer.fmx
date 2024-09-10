@@ -28010,7 +28010,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 57
+              TabOrder = 54
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28034,7 +28034,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 57
+              TabOrder = 54
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000

@@ -3,7 +3,7 @@ program Server;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  mainServer in 'mainServer.pas' {formMain},
+  main in 'main.pas' {formMain},
   dm—omponents in 'DataModule\dm—omponents.pas' {dmCompanents: TDataModule},
   libChangeStyle in 'Library\libChangeStyle.pas';
 
