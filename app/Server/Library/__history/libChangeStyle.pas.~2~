@@ -1,0 +1,27 @@
+unit libChangeStyle;
+
+interface
+
+Type
+  /// <summary>
+  /// Change style in FMX
+  /// </summary>
+  TChangeStyle = class
+  public
+    procedure ChangeStyle(Theme: TStyleBook);
+  end;
+
+implementation
+
+{ TChangeStyle }
+
+procedure TChangeStyle.ChangeStyle(Theme: TStyleBook);
+var
+  i: byte;
+begin
+  for i := 0 to Application.ComponentCount - 1 do
+    if Application.Components[i] is TForm then
+      TForm(Application.Components[i]).StyleBook := Theme;
+end;
+
+end.

@@ -7,7 +7,7 @@ uses
   System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls, IdBaseComponent,
   IdComponent, IdCustomTCPServer, IdTCPServer, FMX.Forms, IdServerIOHandler,
   IdServerIOHandlerSocket, IdServerIOHandlerStack, IdIntercept,
-  IdCompressionIntercept, IdContext;
+  IdCompressionIntercept, IdContext, libChangeStyle;
 
 type
   TdmCompanents = class(TDataModule)
@@ -16,18 +16,20 @@ type
     actMain: TAction;
     actSettings: TAction;
     actExit: TFileExit;
-    sbLight: TStyleBook;
-    sbDark: TStyleBook;
+    sbLight: TStyleBook; // Light theme
+    sbDark: TStyleBook; // Dark theme
     IdTCPServer: TIdTCPServer;
     Language: TLang;
     IdServerCompressionIntercept: TIdServerCompressionIntercept;
     IdServerIOHandlerStack: TIdServerIOHandlerStack;
-    procedure ChangeStyle(Theme: TStyleBook);
+    procedure ChangeStyleLight; // Light theme
+    procedure ChangeStyleDark; // Dark theme
     procedure IdTCPServerExecute(AContext: TIdContext);
   private
     { Private declarations }
   public
     { Public declarations }
+
   end;
 
 var
@@ -42,14 +44,28 @@ uses main;
 {$R *.dfm}
 { TdmCompanents }
 
-// Changing styles
-procedure TdmCompanents.ChangeStyle(Theme: TStyleBook);
+procedure TdmCompanents.ChangeStyleDark; // Dark theme
 var
-  i: byte;
+  ChangeStyle: TChangeStyle; // Library loading from libChangeStyle.pas
 begin
-  for i := 0 to Application.ComponentCount - 1 do
-    if Application.Components[i] is TForm then
-      TForm(Application.Components[i]).StyleBook := Theme;
+  ChangeStyle := TChangeStyle.Create;
+  try
+    ChangeStyle.ChangeStyle(sbDark);
+  finally
+    ChangeStyle.Free;
+  end;
+end;
+
+procedure TdmCompanents.ChangeStyleLight; // Light theme
+var
+  ChangeStyle: TChangeStyle; // Library loading from libChangeStyle.pas
+begin
+  ChangeStyle := TChangeStyle.Create;
+  try
+    ChangeStyle.ChangeStyle(sbLight);
+  finally
+    ChangeStyle.Free;
+  end;
 end;
 
 procedure TdmCompanents.IdTCPServerExecute(AContext: TIdContext);

@@ -1,3 +1,16 @@
+// -----------------------------------------------------------------------------
+// ru-RU
+// Модуль определяет расстояние от точки А до точки Б по заданным координатам X, Y
+//
+// en-EN
+// The module determines the distance from point A to point B according to the specified X, Y coordinates
+//
+// Version 1.0.0
+// The year the module was created 09.09.2024
+// -----------------------------------------------------------------------------
+// ------------------------------------------------------- author Strashnov Igor
+// -----------------------------------------------------------------------------
+
 unit DistanceByCoordinates;
 
 interface
@@ -12,7 +25,7 @@ Type
   /// <returns>
   /// length by coordinates
   /// </returns>
-  TDistance = class
+  TDistance = class sealed
   private
     FXa: Single;
     FYa: Single;

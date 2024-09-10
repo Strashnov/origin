@@ -101,7 +101,7 @@ begin
   // Off checkmark style light
   lbiDark.ItemData.Accessory := TListBoxItemData.TAccessory.aCheckmark;
   // On checkmark style dark
-  dmCompanents.ChangeStyle(dmCompanents.sbDark); // On dark style
+  dmCompanents.ChangeStyleDark; // On dark style
 end;
 
 procedure TformMain.lbiEnglishClick(Sender: TObject);
@@ -130,7 +130,7 @@ begin
   // On checkmark style light
   lbiDark.ItemData.Accessory := TListBoxItemData.TAccessory.aNone;
   // Off checkmark style dark
-  dmCompanents.ChangeStyle(dmCompanents.sbLight); // On light style
+  dmCompanents.ChangeStyleLight; // On light style
 end;
 
 procedure TformMain.lbiMainClick(Sender: TObject);

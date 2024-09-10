@@ -4,7 +4,8 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   main in 'main.pas' {formMain},
-  dm—omponents in 'DataModule\dm—omponents.pas' {dmCompanents: TDataModule};
+  dm—omponents in 'DataModule\dm—omponents.pas' {dmCompanents: TDataModule},
+  libChangeStyle in 'Library\libChangeStyle.pas';
 
 {$R *.res}
 

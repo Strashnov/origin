@@ -27892,7 +27892,7 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 0
+      TabIndex = 3
       TabOrder = 2
       TabPosition = PlatformDefault
       Sizes = (
@@ -27911,7 +27911,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 54.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
@@ -28010,7 +28010,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 59
+              TabOrder = 57
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28034,7 +28034,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 59
+              TabOrder = 57
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28105,7 +28105,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 53.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False

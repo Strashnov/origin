@@ -8,8 +8,10 @@
     <Transaction>1899.12.30 00:00:00.000.856,C:\Sandbox\Server\main.fmx=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.123,C:\Sandbox\Application\Server\Unit1.dfm=C:\Sandbox\Application\Server\DataModule\dmСomponents.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.123,C:\Sandbox\Application\Server\Unit1.pas=C:\Sandbox\Application\Server\DataModule\dmСomponents.pas</Transaction>
+    <Transaction>2024.09.10 13:40:26.441,=C:\Sandbox\app\Server\Unit1.pas</Transaction>
+    <Transaction>2024.09.10 13:40:58.287,C:\Sandbox\app\Server\Library\libChangeStyle.pas=C:\Sandbox\app\Server\Unit1.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android64="" Android=""/>
+		<NoProfile Android64="emulator-5554" Android="emulator-5554"/>
 	</ActiveMobileDevice>
 </BorlandProject>
