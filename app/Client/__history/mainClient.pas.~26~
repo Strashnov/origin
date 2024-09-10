@@ -86,14 +86,23 @@ end;
 
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
+var
+  messageString: string;
 begin
+
+  case tcMain.TabIndex of
+    0:
+      messageString := btnCoordinats.Text;
+    1:
+      messageString := '111';
+  end;
+
   IdTCPClient.Connect;
   try
-    IdTCPClient.Socket.Writeln(btnCoordinats.Text);
+    IdTCPClient.Socket.Writeln(messageString);
   finally
     IdTCPClient.Disconnect;
   end;
-
 end;
 
 procedure TformClient.pbMainMouseDown(Sender: TObject; Button: TMouseButton;
@@ -111,13 +120,11 @@ begin
   begin
     Xb := X;
     Yb := Y;
-    pbMain.Canvas.BeginScene();
+    Canvas.BeginScene();
     try
-
-      pbMain.Canvas.DrawLine(PointF(Xa, Ya), PointF(X, Y), 1);
-
+      Canvas.DrawLine(PointF(Xa, Ya), PointF(Xb, Yb), 1);
     finally
-      pbMain.Canvas.EndScene;
+      Canvas.EndScene;
     end;
 
     labStatusBar.Text := Xa.ToString + ',' + Ya.ToString + ',' + ' ' +

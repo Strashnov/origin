@@ -56,6 +56,8 @@ type
     swtIPPORT: TSwitch;
     txtMessage: TText;
     layTopCoordinats: TLayout;
+    tiMessage: TTabItem;
+    edtSendMessage: TEdit;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -86,14 +88,23 @@ end;
 
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
+var
+  messageString: string;
 begin
+
+  case tcMain.TabIndex of
+    0:
+      messageString := btnCoordinats.Text;
+    1:
+      messageString := '111';
+  end;
+
   IdTCPClient.Connect;
   try
-    IdTCPClient.Socket.Writeln(btnCoordinats.Text);
+    IdTCPClient.Socket.Writeln(messageString);
   finally
     IdTCPClient.Disconnect;
   end;
-
 end;
 
 procedure TformClient.pbMainMouseDown(Sender: TObject; Button: TMouseButton;
@@ -109,14 +120,14 @@ begin
   var
     Distance: TDistance;
   begin
-    self.Canvas.BeginScene();
-    try
-      self.Canvas.DrawLine(PointF(Xa, Ya), PointF(X, Y), 1);
-    finally
-      self.Canvas.EndScene;
-    end;
     Xb := X;
     Yb := Y;
+    Canvas.BeginScene();
+    try
+      Canvas.DrawLine(PointF(Xa, Ya), PointF(Xb, Yb), 1);
+    finally
+      Canvas.EndScene;
+    end;
 
     labStatusBar.Text := Xa.ToString + ',' + Ya.ToString + ',' + ' ' +
       Xb.ToString + ',' + Yb.ToString; // Print the coordinates

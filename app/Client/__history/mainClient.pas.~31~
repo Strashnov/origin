@@ -56,6 +56,13 @@ type
     swtIPPORT: TSwitch;
     txtMessage: TText;
     layTopCoordinats: TLayout;
+    tiMessage: TTabItem;
+    edtSendMessage: TEdit;
+    lbiMessage: TListBoxItem;
+    actSendMessage: TAction;
+    actSettings: TAction;
+    actMain: TAction;
+    cbTimeStamp: TCheckBox;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -63,11 +70,16 @@ type
     procedure btnCoordinatsClick(Sender: TObject);
     procedure actExitExecute(Sender: TObject);
     procedure swtIPPORTSwitch(Sender: TObject);
+    procedure actSendMessageExecute(Sender: TObject);
+    procedure actSettingsExecute(Sender: TObject);
+    procedure actMainExecute(Sender: TObject);
+    procedure cbTimeStampChange(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
     Xa, Ya, Xb, Yb: Single;
+    TimeStamp: String;
   end;
 
 var
@@ -84,16 +96,48 @@ begin
   Application.Terminate; // Close programms
 end;
 
+procedure TformClient.actMainExecute(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiMain;
+end;
+
+procedure TformClient.actSendMessageExecute(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiMessage;
+end;
+
+procedure TformClient.actSettingsExecute(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiSettings;
+end;
+
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
+var
+  messageString: string;
 begin
+
+  case tcMain.TabIndex of
+    0:
+      messageString := btnCoordinats.Text;
+    1:
+      messageString := edtSendMessage.Text+' '+TimeStamp;
+  end;
+
   IdTCPClient.Connect;
   try
-    IdTCPClient.Socket.Writeln(btnCoordinats.Text);
+    IdTCPClient.Socket.Writeln(messageString);
   finally
     IdTCPClient.Disconnect;
   end;
+end;
 
+procedure TformClient.cbTimeStampChange(Sender: TObject);
+begin
+  if cbTimeStamp.IsChecked = False then
+   TimeStamp:=''
+  else
+    TimeStamp := TimeToStr(now);
 end;
 
 procedure TformClient.pbMainMouseDown(Sender: TObject; Button: TMouseButton;
@@ -113,11 +157,9 @@ begin
     Yb := Y;
     Canvas.BeginScene();
     try
-
-     Canvas.DrawLine(PointF(Xa, Ya), PointF(Xb, Yb), 1);
-
+      Canvas.DrawLine(PointF(Xa, Ya), PointF(Xb, Yb), 1);
     finally
-     Canvas.EndScene;
+      Canvas.EndScene;
     end;
 
     labStatusBar.Text := Xa.ToString + ',' + Ya.ToString + ',' + ' ' +
