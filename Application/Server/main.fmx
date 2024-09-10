@@ -27891,7 +27891,8 @@ object formMain: TformMain
       Size.Width = 640.000000000000000000
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 1
+      StyleLookup = 'tabcontrolstyle'
+      TabIndex = 0
       TabOrder = 2
       TabPosition = PlatformDefault
       Sizes = (
@@ -27910,13 +27911,15 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 54.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = ''
+        StyleLookup = 'tabitemstyle'
         TabOrder = 0
         Text = 'tiMain'
+        ExplicitSize.cx = 54.000000000000000000
+        ExplicitSize.cy = 22.000000000000000000
         object memMessageFromClient: TMemo
           Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
           DataDetectorTypes = []
@@ -27934,13 +27937,15 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 70.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = ''
+        StyleLookup = 'tabitemstyle'
         TabOrder = 0
         Text = 'tiSettings'
+        ExplicitSize.cx = 70.000000000000000000
+        ExplicitSize.cy = 22.000000000000000000
         object lbSettings: TListBox
           Align = Client
           Size.Width = 640.000000000000000000
@@ -28005,7 +28010,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 62
+              TabOrder = 59
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28029,7 +28034,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 62
+              TabOrder = 59
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28052,9 +28057,11 @@ object formMain: TformMain
         Size.Width = 79.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = ''
+        StyleLookup = 'tabitemstyle'
         TabOrder = 0
         Text = 'tiLanguage'
+        ExplicitSize.cx = 79.000000000000000000
+        ExplicitSize.cy = 22.000000000000000000
         object lbLanguage: TListBox
           Align = Client
           Size.Width = 640.000000000000000000
@@ -28102,9 +28109,11 @@ object formMain: TformMain
         Size.Width = 53.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = ''
+        StyleLookup = 'tabitemstyle'
         TabOrder = 0
         Text = 'tiStyle'
+        ExplicitSize.cx = 53.000000000000000000
+        ExplicitSize.cy = 22.000000000000000000
         object lbStyle: TListBox
           Align = Client
           Size.Width = 640.000000000000000000
@@ -28152,9 +28161,11 @@ object formMain: TformMain
         Size.Width = 60.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = ''
+        StyleLookup = 'tabitemstyle'
         TabOrder = 0
         Text = 'tiAbout'
+        ExplicitSize.cx = 60.000000000000000000
+        ExplicitSize.cy = 22.000000000000000000
         object imgLogo: TImage
           MultiResBitmap.Height = 500
           MultiResBitmap.Width = 500

@@ -7,8 +7,6 @@ object formClient: TformClient
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  OnMouseDown = FormMouseDown
-  OnMouseUp = FormMouseUp
   DesignerMasterStyle = 0
   object mvMenu: TMultiView
     TargetControl = panMain
@@ -77,43 +75,110 @@ object formClient: TformClient
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
+    StyleLookup = 'panelstyle'
     TabOrder = 5
-    object btnCoordinats: TButton
-      Align = Center
-      Size.Width = 129.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 6
-      Text = 'btnCoordinats'
-      TextSettings.Trimming = None
-    end
-    object labStatusBar: TLabel
-      AutoSize = True
-      Margins.Left = 10.000000000000000000
-      Position.X = 104.000000000000000000
-      Position.Y = 104.000000000000000000
-      Size.Width = 16.000000000000000000
-      Size.Height = 16.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'labelstyle'
-      TextSettings.WordWrap = False
-      TextSettings.Trimming = None
-      Text = '0,0'
-      TabOrder = 0
-    end
     object tbMenu: TToolBar
       Size.Width = 640.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 7
+      StyleLookup = 'toolbarstyle'
+      TabOrder = 5
       object sbMenu: TSpeedButton
-        Align = Left
+        Align = MostLeft
         Size.Width = 80.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'detailstoolbutton'
         Text = 'sbMenu'
         TextSettings.Trimming = None
+      end
+      object btnCoordinats: TButton
+        Align = Center
+        Size.Width = 129.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'btnCoordinats'
+        TextSettings.Trimming = None
+      end
+      object labStatusBar: TLabel
+        Align = MostRight
+        AutoSize = True
+        Margins.Left = 10.000000000000000000
+        Position.X = 624.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = '0,0'
+        TabOrder = 0
+      end
+      object labNamePrograms: TLabel
+        Align = Left
+        AutoSize = True
+        StyledSettings = [Family, FontColor]
+        Position.X = 80.000000000000000000
+        Size.Width = 55.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'Client'
+        TabOrder = 7
+      end
+    end
+    object tcMain: TTabControl
+      Align = Client
+      Size.Width = 640.000000000000000000
+      Size.Height = 440.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabcontrolstyle'
+      TabIndex = 0
+      TabOrder = 6
+      TabPosition = PlatformDefault
+      Sizes = (
+        640s
+        414s
+        640s
+        414s)
+      object tiMain: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = True
+        Size.Width = 54.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'tabitemstyle'
+        TabOrder = 0
+        Text = 'tiMain'
+        object pbMain: TPaintBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 414.000000000000000000
+          Size.PlatformDefault = False
+          OnMouseDown = pbMainMouseDown
+          OnMouseUp = pbMainMouseUp
+        end
+      end
+      object TabItem2: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = False
+        Size.Width = 69.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'tabitemstyle'
+        TabOrder = 0
+        Text = 'TabItem2'
       end
     end
   end
