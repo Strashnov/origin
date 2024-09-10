@@ -7,7 +7,7 @@ uses
   System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls, IdBaseComponent,
   IdComponent, IdCustomTCPServer, IdTCPServer, FMX.Forms, IdServerIOHandler,
   IdServerIOHandlerSocket, IdServerIOHandlerStack, IdIntercept,
-  IdCompressionIntercept;
+  IdCompressionIntercept, IdContext;
 
 type
   TdmCompanents = class(TDataModule)
@@ -22,7 +22,8 @@ type
     Language: TLang;
     IdServerCompressionIntercept: TIdServerCompressionIntercept;
     IdServerIOHandlerStack: TIdServerIOHandlerStack;
-    procedure ChangeStyle(Theme:TStyleBook);
+    procedure ChangeStyle(Theme: TStyleBook);
+    procedure IdTCPServerExecute(AContext: TIdContext);
   private
     { Private declarations }
   public
@@ -39,16 +40,23 @@ implementation
 uses main;
 
 {$R *.dfm}
-
 { TdmCompanents }
 
-//StyleBook
+// Changing styles
 procedure TdmCompanents.ChangeStyle(Theme: TStyleBook);
-var i:byte;
+var
+  i: byte;
 begin
- for i := 0 to Application.ComponentCount-1 do
-     if Application.Components[i] is TForm then
-     TForm(Application.Components[i]).StyleBook:=Theme;
+  for i := 0 to Application.ComponentCount - 1 do
+    if Application.Components[i] is TForm then
+      TForm(Application.Components[i]).StyleBook := Theme;
+end;
+
+procedure TdmCompanents.IdTCPServerExecute(AContext: TIdContext);
+// Accept data from the client
+begin
+  formMain.memMessageFromClient.Lines.Add(AContext.Connection.Socket.ReadLn());
+  AContext.Connection.Disconnect;
 end;
 
 end.

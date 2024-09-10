@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions/>
+  <Transactions>
+    <Transaction>2024.09.10 11:57:22.138,C:\Sandbox\Application\Client\TestClientServer.groupproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
+  </Transactions>
   <Default.Personality>
-    <Projects ActiveProject="C:\Sandbox\Application\Server\Server.dproj"/>
+    <Projects ActiveProject="C:\Sandbox\Application\Client\Client.dproj"/>
   </Default.Personality>
 </BorlandProject>

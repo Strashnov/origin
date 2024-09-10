@@ -43,6 +43,7 @@ type
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
+    procedure btnCoordinatsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,6 +59,18 @@ implementation
 {$R *.fmx}
 
 uses DistanceByCoordinates;
+
+procedure TformClient.btnCoordinatsClick(Sender: TObject);
+// Send data to the server
+begin
+  IdTCPClient.Connect;
+  try
+    IdTCPClient.Socket.Writeln(btnCoordinats.Text);
+  finally
+    IdTCPClient.Disconnect;
+  end;
+
+end;
 
 procedure TformClient.ExitCanActionExec(Sender: TCustomAction;
   var CanExec: Boolean);

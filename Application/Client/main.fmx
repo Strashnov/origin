@@ -100,6 +100,7 @@ object formClient: TformClient
         TabOrder = 6
         Text = 'btnCoordinats'
         TextSettings.Trimming = None
+        OnClick = btnCoordinatsClick
       end
       object labStatusBar: TLabel
         Align = MostRight
@@ -280,15 +281,18 @@ object formClient: TformClient
     Intercept = IdCompressionIntercept
     IOHandler = IdIOHandlerStack
     ConnectTimeout = 0
-    Port = 0
+    Host = '192.168.0.107'
+    Port = 7
     ReadTimeout = -1
     Left = 336
     Top = 376
   end
   object IdIOHandlerStack: TIdIOHandlerStack
+    Destination = '192.168.0.107:7'
+    Host = '192.168.0.107'
     Intercept = IdCompressionIntercept
     MaxLineAction = maException
-    Port = 0
+    Port = 7
     DefaultPort = 0
     Left = 224
     Top = 376
