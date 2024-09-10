@@ -28,16 +28,15 @@ type
     sbMenu: TSpeedButton;
     lbMenu: TListBox;
     recImageMenu: TRectangle;
-    lbghMenu: TListBoxGroupHeader;
+    ListBoxGroupHeader1: TListBoxGroupHeader;
     ListBoxItem1: TListBoxItem;
     ListBoxGroupHeader2: TListBoxGroupHeader;
-    lbiExit: TListBoxItem;
+    ListBoxItem2: TListBoxItem;
     procedure ExitCanActionExec(Sender: TCustomAction; var CanExec: Boolean);
     procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
-    procedure lbiExitClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,11 +89,6 @@ begin
     Distance.Free;
   end;
 
-end;
-
-procedure TformClient.lbiExitClick(Sender: TObject);
-begin
-  Application.Terminate; // Exit
 end;
 
 end.

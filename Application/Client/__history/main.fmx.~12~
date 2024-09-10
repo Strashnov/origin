@@ -18,8 +18,7 @@ object formClient: TformClient
     Size.Width = 250.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
-    TabOrder = 6
+    TabOrder = 7
     object lbMenu: TListBox
       Align = Client
       Size.Width = 250.000000000000000000
@@ -74,16 +73,18 @@ object formClient: TformClient
   end
   object panMain: TPanel
     Align = Client
+    Margins.Left = 250.000000000000000000
+    Margins.Right = -250.000000000000000000
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 5
+    TabOrder = 6
     object btnCoordinats: TButton
       Align = Center
       Size.Width = 129.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 6
+      TabOrder = 7
       Text = 'btnCoordinats'
       TextSettings.Trimming = None
     end
@@ -105,7 +106,7 @@ object formClient: TformClient
       Size.Width = 640.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 7
+      TabOrder = 8
       object sbMenu: TSpeedButton
         Align = Left
         Size.Width = 80.000000000000000000
