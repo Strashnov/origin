@@ -9,13 +9,11 @@ uses
   FMX.ActnList, FMX.StdActns, FMX.Menus, System.ImageList, FMX.ImgList,
   IdIntercept, IdCompressionIntercept, IdIOHandler, IdIOHandlerSocket,
   IdIOHandlerStack, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
-  FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.MultiView, FMX.Objects,
+  FMX.Layouts, FMX.ListBox;
 
 type
   TformClient = class(TForm)
-    MainMenu: TMainMenu;
-    miFile: TMenuItem;
-    miExit: TMenuItem;
     ActionList: TActionList;
     Exit: TFileExit;
     ImageList: TImageList;
@@ -23,8 +21,17 @@ type
     IdIOHandlerStack: TIdIOHandlerStack;
     IdCompressionIntercept: TIdCompressionIntercept;
     btnCoordinats: TButton;
-    StatusBar: TStatusBar;
     labStatusBar: TLabel;
+    panMain: TPanel;
+    mvMenu: TMultiView;
+    tbMenu: TToolBar;
+    sbMenu: TSpeedButton;
+    lbMenu: TListBox;
+    recImageMenu: TRectangle;
+    ListBoxGroupHeader1: TListBoxGroupHeader;
+    ListBoxItem1: TListBoxItem;
+    ListBoxGroupHeader2: TListBoxGroupHeader;
+    ListBoxItem2: TListBoxItem;
     procedure ExitCanActionExec(Sender: TCustomAction; var CanExec: Boolean);
     procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
