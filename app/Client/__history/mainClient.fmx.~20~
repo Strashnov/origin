@@ -16,19 +16,22 @@ object formClient: TformClient
     Size.Width = 250.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 6
     object lbMenu: TListBox
       Align = Client
       Size.Width = 250.000000000000000000
       Size.Height = 210.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
       DisableFocusEffect = True
+      Images = ImageList
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 246.000000000000000000
-      Viewport.Height = 206.000000000000000000
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 210.000000000000000000
       object lbghMenu: TListBoxGroupHeader
         StyleLookup = 'listboxplainheader'
         TabOrder = 0
@@ -36,7 +39,7 @@ object formClient: TformClient
       end
       object lbiMain: TListBoxItem
         Position.Y = 19.000000000000000000
-        Size.Width = 246.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
@@ -45,7 +48,7 @@ object formClient: TformClient
       end
       object lbiSettings: TListBoxItem
         Position.Y = 59.000000000000000000
-        Size.Width = 246.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
@@ -58,14 +61,15 @@ object formClient: TformClient
         TabOrder = 2
       end
       object lbiExit: TListBoxItem
+        ImageIndex = 0
         Position.Y = 118.000000000000000000
-        Size.Width = 246.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 3
         Text = 'Exit'
-        OnApplyStyleLookup = actExitExecute
+        OnClick = actExitExecute
       end
     end
     object recImageMenu: TRectangle
@@ -14513,8 +14517,6 @@ object formClient: TformClient
   end
   object panMain: TPanel
     Align = Client
-    Margins.Left = 250.000000000000000000
-    Margins.Right = -250.000000000000000000
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
@@ -14540,24 +14542,10 @@ object formClient: TformClient
         Size.Width = 129.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 6
+        TabOrder = 5
         Text = 'btnCoordinats'
         TextSettings.Trimming = None
         OnClick = btnCoordinatsClick
-      end
-      object labStatusBar: TLabel
-        Align = MostRight
-        AutoSize = True
-        Margins.Left = 10.000000000000000000
-        Position.X = 624.000000000000000000
-        Size.Width = 16.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = 'labelstyle'
-        TextSettings.WordWrap = False
-        TextSettings.Trimming = None
-        Text = '0,0'
-        TabOrder = 0
       end
       object labNamePrograms: TLabel
         Align = Left
@@ -14573,7 +14561,7 @@ object formClient: TformClient
         TextSettings.WordWrap = False
         TextSettings.Trimming = None
         Text = 'Client'
-        TabOrder = 7
+        TabOrder = 6
       end
     end
     object tcMain: TTabControl
@@ -14606,6 +14594,13 @@ object formClient: TformClient
         Text = 'tiMain'
         ExplicitSize.cx = 54.000000000000000000
         ExplicitSize.cy = 26.000000000000000000
+        object txtMessage: TText
+          Align = Center
+          Size.Width = 185.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Draw a line and you count the distance'
+        end
         object pbMain: TPaintBox
           Align = Client
           Size.Width = 640.000000000000000000
@@ -14613,6 +14608,26 @@ object formClient: TformClient
           Size.PlatformDefault = False
           OnMouseDown = pbMainMouseDown
           OnMouseUp = pbMainMouseUp
+          object layTopCoordinats: TLayout
+            Align = MostTop
+            Size.Width = 640.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object labStatusBar: TLabel
+              Align = Center
+              AutoSize = True
+              Margins.Left = 10.000000000000000000
+              Size.Width = 16.000000000000000000
+              Size.Height = 16.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'labelstyle'
+              TextSettings.WordWrap = False
+              TextSettings.Trimming = None
+              Text = '0,0'
+              TabOrder = 0
+            end
+          end
         end
       end
       object tiStyle: TTabItem
@@ -14677,6 +14692,134 @@ object formClient: TformClient
         StyleLookup = ''
         TabOrder = 0
         Text = 'Settings'
+        ExplicitSize.cx = 63.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object lbSettings: TListBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 414.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 640.000000000000000000
+          Viewport.Height = 414.000000000000000000
+          object lbghStyleBook: TListBoxGroupHeader
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 0
+            Text = 'Style'
+          end
+          object lbiStyle: TListBoxItem
+            ItemData.Accessory = aMore
+            Position.Y = 19.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 1
+            Text = 'Style'
+          end
+          object lbghLanguage: TListBoxGroupHeader
+            Position.Y = 59.000000000000000000
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 2
+            Text = 'Language'
+          end
+          object lbiLanguage: TListBoxItem
+            ItemData.Accessory = aMore
+            Position.Y = 78.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 3
+            Text = 'Language'
+          end
+          object lbghTCP: TListBoxGroupHeader
+            Position.Y = 118.000000000000000000
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 4
+            Text = 'IP/Port'
+          end
+          object lbiSwitch: TListBoxItem
+            Position.Y = 137.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 7
+            Text = 'lbiSwitch'
+            object swtIPPORT: TSwitch
+              Align = FitRight
+              Locked = True
+              IsChecked = False
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              Position.X = 547.623413085937500000
+              Position.Y = 6.000000000000000000
+              Size.Width = 87.376586914062500000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'switchstyle'
+              TabOrder = 46
+              OnSwitch = swtIPPORTSwitch
+            end
+          end
+          object lbiIP: TListBoxItem
+            Position.Y = 177.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 5
+            Text = 'IP'
+            object edtIP: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              StyleLookup = 'editstyle'
+              TabOrder = 46
+              FilterChar = '0123456789.'
+              Text = '192.168.0.107'
+              Locked = True
+              Margins.Left = 50.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 585.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+          object lbiPort: TListBoxItem
+            Position.Y = 217.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 6
+            Text = 'Port'
+            object edtPort: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              StyleLookup = 'editstyle'
+              TabOrder = 46
+              FilterChar = '0123456789'
+              Text = '7'
+              Locked = True
+              Margins.Left = 50.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 585.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
       end
     end
   end

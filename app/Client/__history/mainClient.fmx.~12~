@@ -23,13 +23,15 @@ object formClient: TformClient
       Size.Width = 250.000000000000000000
       Size.Height = 210.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
       DisableFocusEffect = True
+      Images = ImageList
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 246.000000000000000000
-      Viewport.Height = 206.000000000000000000
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 210.000000000000000000
       object lbghMenu: TListBoxGroupHeader
         StyleLookup = 'listboxplainheader'
         TabOrder = 0
@@ -37,7 +39,7 @@ object formClient: TformClient
       end
       object lbiMain: TListBoxItem
         Position.Y = 19.000000000000000000
-        Size.Width = 246.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
@@ -46,7 +48,7 @@ object formClient: TformClient
       end
       object lbiSettings: TListBoxItem
         Position.Y = 59.000000000000000000
-        Size.Width = 246.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
@@ -59,14 +61,15 @@ object formClient: TformClient
         TabOrder = 2
       end
       object lbiExit: TListBoxItem
+        ImageIndex = 0
         Position.Y = 118.000000000000000000
-        Size.Width = 246.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 3
         Text = 'Exit'
-        OnClick = lbiExitClick
+        OnClick = actExitExecute
       end
     end
     object recImageMenu: TRectangle
@@ -14581,7 +14584,7 @@ object formClient: TformClient
       Size.Height = 440.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 0
+      TabIndex = 2
       TabOrder = 6
       TabPosition = PlatformDefault
       Sizes = (
@@ -14596,7 +14599,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 54.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14669,13 +14672,112 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 63.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
         Text = 'Settings'
+        ExplicitSize.cx = 63.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object lbSettings: TListBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 414.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 640.000000000000000000
+          Viewport.Height = 414.000000000000000000
+          object lbghStyleBook: TListBoxGroupHeader
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 0
+            Text = 'Style'
+          end
+          object lbiStyle: TListBoxItem
+            ItemData.Accessory = aMore
+            Position.Y = 19.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 1
+            Text = 'Style'
+          end
+          object lbghLanguage: TListBoxGroupHeader
+            Position.Y = 59.000000000000000000
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 2
+            Text = 'Language'
+          end
+          object lbiLanguage: TListBoxItem
+            ItemData.Accessory = aMore
+            Position.Y = 78.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 3
+            Text = 'Language'
+          end
+          object lbghTCP: TListBoxGroupHeader
+            Position.Y = 118.000000000000000000
+            StyleLookup = 'listboxplainheader'
+            TabOrder = 4
+            Text = 'lbghTCP'
+          end
+          object lbiIP: TListBoxItem
+            Position.Y = 137.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 5
+            Text = 'IP'
+            object edtIP: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              StyleLookup = 'editstyle'
+              TabOrder = 46
+              Locked = True
+              Margins.Left = 50.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 585.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+          object lbiPort: TListBoxItem
+            Position.Y = 177.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 6
+            Text = 'Port'
+            object edtPort: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              StyleLookup = 'editstyle'
+              TabOrder = 46
+              Locked = True
+              Margins.Left = 50.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 585.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
       end
     end
   end
@@ -14683,11 +14785,11 @@ object formClient: TformClient
     Images = ImageList
     Left = 432
     Top = 384
-    object Exit: TFileExit
+    object actExit: TAction
       Category = 'File'
-      Hint = 'Quit|Quits the application'
+      Text = 'Exit'
       ImageIndex = 0
-      OnCanActionExec = ExitCanActionExec
+      OnExecute = actExitExecute
       ImageIndex = 0
     end
   end

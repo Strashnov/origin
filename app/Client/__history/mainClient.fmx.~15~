@@ -14538,16 +14538,28 @@ object formClient: TformClient
         TextSettings.Trimming = None
       end
       object btnCoordinats: TButton
-        Align = MostRight
-        Position.X = 511.000000000000000000
+        Align = Center
         Size.Width = 129.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'deletetoolbutton'
-        TabOrder = 5
-        Text = 'Send'
+        TabOrder = 6
+        Text = 'btnCoordinats'
         TextSettings.Trimming = None
         OnClick = btnCoordinatsClick
+      end
+      object labStatusBar: TLabel
+        Align = MostRight
+        AutoSize = True
+        Margins.Left = 10.000000000000000000
+        Position.X = 624.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = '0,0'
+        TabOrder = 0
       end
       object labNamePrograms: TLabel
         Align = Left
@@ -14563,7 +14575,7 @@ object formClient: TformClient
         TextSettings.WordWrap = False
         TextSettings.Trimming = None
         Text = 'Client'
-        TabOrder = 6
+        TabOrder = 7
       end
     end
     object tcMain: TTabControl
@@ -14572,7 +14584,7 @@ object formClient: TformClient
       Size.Height = 440.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 0
+      TabIndex = 2
       TabOrder = 6
       TabPosition = PlatformDefault
       Sizes = (
@@ -14587,7 +14599,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 54.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14596,13 +14608,6 @@ object formClient: TformClient
         Text = 'tiMain'
         ExplicitSize.cx = 54.000000000000000000
         ExplicitSize.cy = 26.000000000000000000
-        object txtMessage: TText
-          Align = Center
-          Size.Width = 185.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          Text = 'Draw a line and you count the distance'
-        end
         object pbMain: TPaintBox
           Align = Client
           Size.Width = 640.000000000000000000
@@ -14610,26 +14615,6 @@ object formClient: TformClient
           Size.PlatformDefault = False
           OnMouseDown = pbMainMouseDown
           OnMouseUp = pbMainMouseUp
-          object layTopCoordinats: TLayout
-            Align = MostTop
-            Size.Width = 640.000000000000000000
-            Size.Height = 17.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 0
-            object labStatusBar: TLabel
-              Align = Center
-              AutoSize = True
-              Margins.Left = 10.000000000000000000
-              Size.Width = 16.000000000000000000
-              Size.Height = 16.000000000000000000
-              Size.PlatformDefault = False
-              StyleLookup = 'labelstyle'
-              TextSettings.WordWrap = False
-              TextSettings.Trimming = None
-              Text = '0,0'
-              TabOrder = 0
-            end
-          end
         end
       end
       object tiStyle: TTabItem
@@ -14687,7 +14672,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 63.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14767,7 +14752,7 @@ object formClient: TformClient
               Size.Height = 28.000000000000000000
               Size.PlatformDefault = False
               StyleLookup = 'switchstyle'
-              TabOrder = 45
+              TabOrder = 46
               OnSwitch = swtIPPORTSwitch
             end
           end
@@ -14783,9 +14768,7 @@ object formClient: TformClient
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
-              FilterChar = '0123456789.'
-              Text = '192.168.0.107'
+              TabOrder = 46
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -14808,9 +14791,7 @@ object formClient: TformClient
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
-              FilterChar = '0123456789'
-              Text = '7'
+              TabOrder = 46
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000

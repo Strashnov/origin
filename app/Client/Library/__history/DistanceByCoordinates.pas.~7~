@@ -28,6 +28,11 @@ Type
   /// length by coordinates
   /// </returns>
   TDistance = class sealed
+    // private
+    // FXa: Single;
+    // FYa: Single;
+    // FXb: Single;
+    // FYb: Single;
   public
     function XYAB(Xa, Ya, Xb, Yb: Single): Single;
   end;
@@ -38,8 +43,17 @@ implementation
 { TDistance }
 
 function TDistance.XYAB(Xa, Ya, Xb, Yb: Single): Single;
+var
+  rst: Double;
 begin
-  Result := sqrt(sqr(Xa - Xb)) + sqr(Ya - Yb)
+  // FXa := Xa;
+  // FYa := Ya;
+  // FXb := Xb;
+  // FYb := Yb;
+
+  rst := (sqrt(sqr(Xa - Xb)) + sqr(Ya - Yb));
+
+  Result := Format('%f', [rst]).ToDouble;
 end;
 
 end.

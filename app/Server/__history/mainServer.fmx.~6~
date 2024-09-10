@@ -27892,7 +27892,7 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 2
       TabPosition = None
       Sizes = (
@@ -27911,7 +27911,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -27937,7 +27937,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -28011,7 +28011,6 @@ object formMain: TformMain
               Align = Client
               StyleLookup = 'editstyle'
               TabOrder = 46
-              FilterChar = '0123456789.'
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000
@@ -28036,7 +28035,6 @@ object formMain: TformMain
               Align = Client
               StyleLookup = 'editstyle'
               TabOrder = 46
-              FilterChar = '0123456789'
               Locked = True
               Margins.Left = 50.000000000000000000
               Margins.Top = 5.000000000000000000

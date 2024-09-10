@@ -10,12 +10,11 @@ uses
   IdIntercept, IdCompressionIntercept, IdIOHandler, IdIOHandlerSocket,
   IdIOHandlerStack, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.MultiView, FMX.Objects,
-  FMX.Layouts, FMX.ListBox, FMX.TabControl;
+  FMX.Layouts, FMX.ListBox, FMX.TabControl, FMX.Edit;
 
 type
   TformClient = class(TForm)
     ActionList: TActionList;
-    Exit: TFileExit;
     ImageList: TImageList;
     IdTCPClient: TIdTCPClient;
     IdIOHandlerStack: TIdIOHandlerStack;
@@ -29,21 +28,41 @@ type
     lbMenu: TListBox;
     recImageMenu: TRectangle;
     lbghMenu: TListBoxGroupHeader;
-    ListBoxItem1: TListBoxItem;
-    ListBoxGroupHeader2: TListBoxGroupHeader;
+    lbiMain: TListBoxItem;
+    lbghLineOne: TListBoxGroupHeader;
     lbiExit: TListBoxItem;
     tcMain: TTabControl;
     tiMain: TTabItem;
-    TabItem2: TTabItem;
+    tiStyle: TTabItem;
     pbMain: TPaintBox;
     labNamePrograms: TLabel;
-    procedure ExitCanActionExec(Sender: TCustomAction; var CanExec: Boolean);
-    procedure lbiExitClick(Sender: TObject);
+    lbStyle: TListBox;
+    lbiLight: TListBoxItem;
+    lbiDark: TListBoxItem;
+    tiSettings: TTabItem;
+    lbiSettings: TListBoxItem;
+    actExit: TAction;
+    lbSettings: TListBox;
+    lbghStyleBook: TListBoxGroupHeader;
+    lbiStyle: TListBoxItem;
+    lbghLanguage: TListBoxGroupHeader;
+    lbiLanguage: TListBoxItem;
+    lbghTCP: TListBoxGroupHeader;
+    lbiIP: TListBoxItem;
+    edtIP: TEdit;
+    lbiPort: TListBoxItem;
+    edtPort: TEdit;
+    lbiSwitch: TListBoxItem;
+    swtIPPORT: TSwitch;
+    txtMessage: TText;
+    layTopCoordinats: TLayout;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure btnCoordinatsClick(Sender: TObject);
+    procedure actExitExecute(Sender: TObject);
+    procedure swtIPPORTSwitch(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,27 +79,27 @@ implementation
 
 uses DistanceByCoordinates;
 
-procedure TformClient.btnCoordinatsClick(Sender: TObject);
-// Send data to the server
-begin
-  IdTCPClient.Connect;
-  try
-    IdTCPClient.Socket.Writeln(btnCoordinats.Text);
-  finally
-    IdTCPClient.Disconnect;
-  end;
-
-end;
-
-procedure TformClient.ExitCanActionExec(Sender: TCustomAction;
-  var CanExec: Boolean);
+procedure TformClient.actExitExecute(Sender: TObject);
 begin
   Application.Terminate; // Close programms
 end;
 
-procedure TformClient.lbiExitClick(Sender: TObject);
+procedure TformClient.btnCoordinatsClick(Sender: TObject);
+// Send data to the server
+var messageString:string;
 begin
-  Application.Terminate; // Exit
+
+case tcMain.TabIndex of
+      0:messageString:=btnCoordinats.Text;
+      1:messageString:='111';
+end;
+
+  IdTCPClient.Connect;
+  try
+    IdTCPClient.Socket.Writeln(messageString);
+  finally
+    IdTCPClient.Disconnect;
+  end;
 end;
 
 procedure TformClient.pbMainMouseDown(Sender: TObject; Button: TMouseButton;
@@ -96,14 +115,16 @@ begin
   var
     Distance: TDistance;
   begin
-    self.Canvas.BeginScene();
-    try
-      self.Canvas.DrawLine(PointF(Xa, Ya), PointF(X, Y), 1);
-    finally
-      self.Canvas.EndScene;
-    end;
     Xb := X;
     Yb := Y;
+    Canvas.BeginScene();
+    try
+
+     Canvas.DrawLine(PointF(Xa, Ya), PointF(Xb, Yb), 1);
+
+    finally
+     Canvas.EndScene;
+    end;
 
     labStatusBar.Text := Xa.ToString + ',' + Ya.ToString + ',' + ' ' +
       Xb.ToString + ',' + Yb.ToString; // Print the coordinates
@@ -114,6 +135,22 @@ begin
     finally
       Distance.Free;
     end;
+  end;
+end;
+
+procedure TformClient.swtIPPORTSwitch(Sender: TObject);
+begin
+  if swtIPPORT.IsChecked = True then
+  begin
+    lbiIP.Visible := False;
+    lbiPort.Visible := False;
+    IdTCPClient.Host := edtIP.Text;
+    IdTCPClient.Port := edtPort.Text.ToInteger;
+  end
+  else
+  begin
+    lbiIP.Visible := True;
+    lbiPort.Visible := True;
   end;
 end;
 

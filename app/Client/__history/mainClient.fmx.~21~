@@ -14767,7 +14767,7 @@ object formClient: TformClient
               Size.Height = 28.000000000000000000
               Size.PlatformDefault = False
               StyleLookup = 'switchstyle'
-              TabOrder = 45
+              TabOrder = 46
               OnSwitch = swtIPPORTSwitch
             end
           end
@@ -14783,7 +14783,7 @@ object formClient: TformClient
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
+              TabOrder = 46
               FilterChar = '0123456789.'
               Text = '192.168.0.107'
               Locked = True
@@ -14808,7 +14808,7 @@ object formClient: TformClient
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
+              TabOrder = 46
               FilterChar = '0123456789'
               Text = '7'
               Locked = True

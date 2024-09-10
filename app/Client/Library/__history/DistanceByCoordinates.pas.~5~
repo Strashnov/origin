@@ -15,8 +15,6 @@ unit DistanceByCoordinates;
 
 interface
 
-uses System.SysUtils;
-
 Type
   /// <summary>
   /// Distanse
@@ -28,6 +26,11 @@ Type
   /// length by coordinates
   /// </returns>
   TDistance = class sealed
+  private
+    FXa: Single;
+    FYa: Single;
+    FXb: Single;
+    FYb: Single;
   public
     function XYAB(Xa, Ya, Xb, Yb: Single): Single;
   end;
@@ -39,7 +42,11 @@ implementation
 
 function TDistance.XYAB(Xa, Ya, Xb, Yb: Single): Single;
 begin
-  Result := sqrt(sqr(Xa - Xb)) + sqr(Ya - Yb)
+  FXa := Xa;
+  FYa := Ya;
+  FXb := Xb;
+  FYb := Yb;
+  Result := sqrt(sqr(FXa - FXb) + sqr(FYa - FYb));
 end;
 
 end.
