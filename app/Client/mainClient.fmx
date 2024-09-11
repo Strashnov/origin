@@ -14587,7 +14587,7 @@ object formClient: TformClient
       Size.Height = 440.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 0
+      TabIndex = 1
       TabOrder = 6
       TabPosition = PlatformDefault
       Sizes = (
@@ -14604,7 +14604,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 54.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14654,13 +14654,15 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 74.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
         Text = 'tiMessage'
+        ExplicitSize.cx = 74.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
         object layMessage: TLayout
           Align = Bottom
           Position.Y = 364.000000000000000000
@@ -14692,6 +14694,27 @@ object formClient: TformClient
             Size.Width = 630.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
+          end
+        end
+        object lbMessage: TListBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 364.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 1
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 640.000000000000000000
+          Viewport.Height = 364.000000000000000000
+          object ListBoxItem1: TListBoxItem
+            Size.Width = 640.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'ListBoxItem1'
           end
         end
       end

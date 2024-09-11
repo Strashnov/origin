@@ -27931,8 +27931,8 @@ object formMain: TformMain
           Size.PlatformDefault = False
           StyleLookup = 'memostyle'
           TabOrder = 0
-          Viewport.Width = 640.000000000000000000
-          Viewport.Height = 638.000000000000000000
+          Viewport.Width = 638.000000000000000000
+          Viewport.Height = 636.000000000000000000
         end
       end
       object tiSettings: TTabItem
@@ -28013,7 +28013,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
+              TabOrder = 46
               FilterChar = '0123456789.'
               Locked = True
               Margins.Left = 50.000000000000000000
@@ -28038,7 +28038,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
+              TabOrder = 46
               FilterChar = '0123456789'
               Locked = True
               Margins.Left = 50.000000000000000000

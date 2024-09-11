@@ -64,6 +64,8 @@ type
     actMain: TAction;
     cbTimeStamp: TCheckBox;
     layMessage: TLayout;
+    lbMessage: TListBox;
+    ListBoxItem1: TListBoxItem;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -122,7 +124,9 @@ begin
     0:
       messageString := btnCoordinats.Text;
     1:
-      messageString := edtSendMessage.Text + ' ' + TimeStamp;
+      begin
+        messageString := edtSendMessage.Text + ' ' + TimeStamp
+      end;
   end;
 
   IdTCPClient.Connect;

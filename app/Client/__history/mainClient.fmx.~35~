@@ -16,6 +16,7 @@ object formClient: TformClient
     Size.Width = 250.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 6
     object lbMenu: TListBox
       Align = Client
@@ -56,6 +57,7 @@ object formClient: TformClient
         StyleLookup = 'listboxitemnodetail'
         TabOrder = 5
         Text = 'Message'
+        OnClick = actSendMessageExecute
       end
       object lbiSettings: TListBoxItem
         ImageIndex = 2
@@ -14530,8 +14532,6 @@ object formClient: TformClient
   end
   object panMain: TPanel
     Align = Client
-    Margins.Left = 250.000000000000000000
-    Margins.Right = -250.000000000000000000
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
@@ -14661,19 +14661,38 @@ object formClient: TformClient
         StyleLookup = ''
         TabOrder = 0
         Text = 'tiMessage'
-        object edtSendMessage: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
+        object layMessage: TLayout
           Align = Bottom
-          TabOrder = 0
-          Position.X = 5.000000000000000000
-          Position.Y = 387.000000000000000000
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 630.000000000000000000
-          Size.Height = 22.000000000000000000
+          Position.Y = 364.000000000000000000
+          Size.Width = 640.000000000000000000
+          Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
+          TabOrder = 0
+          object cbTimeStamp: TCheckBox
+            Align = Right
+            Position.X = 536.000000000000000000
+            Size.Width = 104.000000000000000000
+            Size.Height = 18.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'checkboxstyle'
+            TabOrder = 0
+            Text = 'Time stamp'
+            OnChange = cbTimeStampChange
+          end
+          object edtSendMessage: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = MostBottom
+            TabOrder = 1
+            Position.X = 5.000000000000000000
+            Position.Y = 23.000000000000000000
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 630.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+          end
         end
       end
       object tiStyle: TTabItem
@@ -14889,14 +14908,14 @@ object formClient: TformClient
     end
     object actSettings: TAction
       Category = 'File'
-      Text = 'actSettings'
+      Text = 'Settings'
       ImageIndex = 2
       OnExecute = actSettingsExecute
       ImageIndex = 2
     end
     object actMain: TAction
       Category = 'File'
-      Text = 'actMain'
+      Text = 'Main'
       ImageIndex = 3
       OnExecute = actMainExecute
       ImageIndex = 3
