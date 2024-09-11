@@ -64,6 +64,7 @@ type
     actMain: TAction;
     cbTimeStamp: TCheckBox;
     layMessage: TLayout;
+    lbMessage: TListBox;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -81,6 +82,7 @@ type
     { Public declarations }
     Xa, Ya, Xb, Yb: Single;
     TimeStamp: String;
+    increaseMessage: int64;
   end;
 
 var
@@ -116,13 +118,22 @@ procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
 var
   messageString: string;
+  increaseListBoxItems: TListBoxItem;
 begin
 
   case tcMain.TabIndex of
     0:
       messageString := btnCoordinats.Text;
     1:
-      messageString := edtSendMessage.Text + ' ' + TimeStamp;
+      begin
+        messageString := edtSendMessage.Text + ' ' + TimeStamp;
+        increaseMessage := increaseMessage + 1;
+        increaseListBoxItems := TListBoxItem.Create(lbMessage);
+        increaseListBoxItems.Parent := lbMessage;
+        increaseListBoxItems.Name := 'increaseListBoxItems' +
+          increaseMessage.ToString;
+        increaseListBoxItems.Text := messageString;
+      end;
   end;
 
   IdTCPClient.Connect;

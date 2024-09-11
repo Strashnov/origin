@@ -14661,27 +14661,89 @@ object formClient: TformClient
         StyleLookup = ''
         TabOrder = 0
         Text = 'tiMessage'
-        object edtSendMessage: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
+        ExplicitSize.cx = 74.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object layMessage: TLayout
           Align = Bottom
-          TabOrder = 0
-          Position.X = 5.000000000000000000
-          Position.Y = 387.000000000000000000
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 630.000000000000000000
-          Size.Height = 22.000000000000000000
+          Position.Y = 364.000000000000000000
+          Size.Width = 640.000000000000000000
+          Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
+          TabOrder = 0
+          object cbTimeStamp: TCheckBox
+            Align = Right
+            Position.X = 536.000000000000000000
+            Size.Width = 104.000000000000000000
+            Size.Height = 18.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'checkboxstyle'
+            TabOrder = 0
+            Text = 'Time stamp'
+            OnChange = cbTimeStampChange
+          end
+          object edtSendMessage: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = MostBottom
+            TabOrder = 1
+            Position.X = 5.000000000000000000
+            Position.Y = 23.000000000000000000
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 630.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+          end
         end
-        object cbTimeStamp: TCheckBox
-          Position.X = 5.000000000000000000
-          Position.Y = 366.000000000000000000
-          StyleLookup = 'checkboxstyle'
+        object lbMessage: TListBox
+          Align = Client
+          Size.Width = 640.000000000000000000
+          Size.Height = 364.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
           TabOrder = 1
-          Text = 'cbTimeStamp'
-          OnChange = cbTimeStampChange
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 640.000000000000000000
+          Viewport.Height = 364.000000000000000000
+          object ListBoxItem1: TListBoxItem
+            Size.Width = 640.000000000000000000
+            Size.Height = 100.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'ListBoxItem1'
+            object Rectangle1: TRectangle
+              Align = Left
+              Corners = [BottomLeft]
+              CornerType = Bevel
+              Fill.Color = claLightgoldenrodyellow
+              Margins.Left = 20.000000000000000000
+              Position.X = 20.000000000000000000
+              Sides = []
+              Size.Width = 149.000000000000000000
+              Size.Height = 100.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Color = claNull
+              XRadius = -15.000000000000000000
+              YRadius = 10.000000000000000000
+              object Text1: TText
+                Align = Client
+                Margins.Left = 5.000000000000000000
+                Margins.Top = 5.000000000000000000
+                Margins.Right = 5.000000000000000000
+                Margins.Bottom = 5.000000000000000000
+                Size.Width = 139.000000000000000000
+                Size.Height = 90.000000000000000000
+                Size.PlatformDefault = False
+                Text = 'sdfsdfsdfsdfsfsdfsfsdfsfsdfsdf'
+                TextSettings.HorzAlign = Leading
+                TextSettings.VertAlign = Leading
+              end
+            end
+          end
         end
       end
       object tiStyle: TTabItem

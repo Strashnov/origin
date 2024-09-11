@@ -14710,9 +14710,6 @@ object formClient: TformClient
           Viewport.Width = 640.000000000000000000
           Viewport.Height = 364.000000000000000000
           object ListBoxItem1: TListBoxItem
-            Size.Width = 640.000000000000000000
-            Size.Height = 50.000000000000000000
-            Size.PlatformDefault = False
             TabOrder = 0
             Text = 'ListBoxItem1'
           end

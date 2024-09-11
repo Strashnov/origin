@@ -83,6 +83,7 @@ type
     { Public declarations }
     Xa, Ya, Xb, Yb: Single;
     TimeStamp: String;
+    increaseMessage: int64;
   end;
 
 var
@@ -118,6 +119,9 @@ procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
 var
   messageString: string;
+  increaseListBoxItems: TListBoxItem;
+  increaseRectangel: TRectangle;
+  increaseText: TText;
 begin
 
   case tcMain.TabIndex of
@@ -125,7 +129,45 @@ begin
       messageString := btnCoordinats.Text;
     1:
       begin
-        messageString := edtSendMessage.Text + ' ' + TimeStamp
+        messageString := edtSendMessage.Text + ' ' + TimeStamp;
+        increaseMessage := increaseMessage + 1;
+        increaseListBoxItems := TListBoxItem.Create(lbMessage);
+        increaseListBoxItems.Parent := lbMessage;
+        increaseListBoxItems.Name := 'increaseListBoxItems' +
+          increaseMessage.ToString;
+        increaseListBoxItems.Height := 110;
+        increaseListBoxItems.Text := EmptyStr;
+
+        increaseRectangel := TRectangle.Create(increaseListBoxItems);
+        increaseRectangel.Parent := increaseListBoxItems;
+        increaseRectangel.Name := 'increaseRectangel' +
+          increaseMessage.ToString;
+        increaseRectangel.Height := 100;
+        increaseRectangel.Width := 200;
+        increaseRectangel.Align := TAlignLayout.Left;
+        increaseRectangel.Margins.Left := 20;
+        increaseRectangel.Margins.Top := 5;
+        increaseRectangel.Margins.Bottom := 5;
+        increaseRectangel.XRadius := -15;
+        increaseRectangel.YRadius := 10;
+        increaseRectangel.Stroke.Kind := TBrushKind.None;
+        increaseRectangel.CornerType := TCornerType.Bevel;
+        increaseRectangel.Corners := [TCorner.BottomLeft];
+        increaseRectangel.Fill.Color := TAlphaColorRec.Lemonchiffon;
+
+        increaseText := TText.Create(increaseRectangel);
+        increaseText.Parent := increaseRectangel;
+        increaseText.Name := 'increaseText' + increaseMessage.ToString;
+        increaseText.Align := TAlignLayout.Client;
+        increaseText.Margins.Bottom := 5;
+        increaseText.Margins.Left := 5;
+        increaseText.Margins.Right := 5;
+        increaseText.Margins.Top := 5;
+        increaseText.TextSettings.VertAlign := TTextAlign.Leading;
+        increaseText.TextSettings.HorzAlign := TTextAlign.Leading;
+        increaseText.TextSettings.WordWrap := True;
+
+        increaseText.Text := messageString;
       end;
   end;
 

@@ -63,6 +63,10 @@ type
     actSettings: TAction;
     actMain: TAction;
     cbTimeStamp: TCheckBox;
+    layMessage: TLayout;
+    lbMessage: TListBox;
+    ListBoxItem1: TListBoxItem;
+    Rectangle1: TRectangle;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -80,6 +84,7 @@ type
     { Public declarations }
     Xa, Ya, Xb, Yb: Single;
     TimeStamp: String;
+    increaseMessage: int64;
   end;
 
 var
@@ -98,30 +103,52 @@ end;
 
 procedure TformClient.actMainExecute(Sender: TObject);
 begin
-  tcMain.ActiveTab := tiMain;
+  tcMain.ActiveTab := tiMain; // Open main tab
 end;
 
 procedure TformClient.actSendMessageExecute(Sender: TObject);
 begin
-  tcMain.ActiveTab := tiMessage;
+  tcMain.ActiveTab := tiMessage; // Open message tab
 end;
 
 procedure TformClient.actSettingsExecute(Sender: TObject);
 begin
-  tcMain.ActiveTab := tiSettings;
+  tcMain.ActiveTab := tiSettings; // Open settings tab
 end;
 
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
 var
   messageString: string;
+  increaseListBoxItems: TListBoxItem;
+  increaseRectangel: TRectangle;
 begin
 
   case tcMain.TabIndex of
     0:
       messageString := btnCoordinats.Text;
     1:
-      messageString := edtSendMessage.Text;
+      begin
+        messageString := edtSendMessage.Text + ' ' + TimeStamp;
+        increaseMessage := increaseMessage + 1;
+        increaseListBoxItems := TListBoxItem.Create(lbMessage);
+        increaseListBoxItems.Parent := lbMessage;
+        increaseListBoxItems.Name := 'increaseListBoxItems' +
+          increaseMessage.ToString;
+        increaseListBoxItems.Height := 100;
+
+        increaseRectangel := TRectangle.Create(increaseListBoxItems);
+        increaseRectangel.Parent := increaseListBoxItems;
+        increaseRectangel.Name:='increaseRectangel'+increaseMessage.ToString;
+        increaseRectangel.Height:=100;
+        increaseRectangel.Width:=200;
+        increaseRectangel.Margins.Left:=20;
+        increaseRectangel.XRadius:=-15;
+        increaseRectangel.YRadius:=10;
+        increaseRectangel.Stroke.Kind:=TBrushKind.None;
+
+        increaseListBoxItems.Text := messageString;
+      end;
   end;
 
   IdTCPClient.Connect;
@@ -133,11 +160,15 @@ begin
 end;
 
 procedure TformClient.cbTimeStampChange(Sender: TObject);
+// Send the current time to the message
 begin
   if cbTimeStamp.IsChecked = False then
-   TimeStamp:=''
+    TimeStamp := ''
   else
+  begin
+    cbTimeStamp.IsChecked := True;
     TimeStamp := TimeToStr(now);
+  end;
 end;
 
 procedure TformClient.pbMainMouseDown(Sender: TObject; Button: TMouseButton;
@@ -152,6 +183,7 @@ procedure TformClient.pbMainMouseUp(Sender: TObject; Button: TMouseButton;
 begin
   var
     Distance: TDistance;
+
   begin
     Xb := X;
     Yb := Y;
@@ -180,8 +212,8 @@ begin
   begin
     lbiIP.Visible := False;
     lbiPort.Visible := False;
-    IdTCPClient.Host := edtIP.Text;
-    IdTCPClient.Port := edtPort.Text.ToInteger;
+    IdTCPClient.Host := edtIP.Text; // Set ip
+    IdTCPClient.Port := edtPort.Text.ToInteger; // Set port
   end
   else
   begin

@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-<<<<<<< HEAD
-	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.138,\\Mac\Home\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=C:\Sandbox\Application\Client\TestClientServer.groupproj</Transaction>
-  </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="C:\Sandbox\app\Client\Client.dproj"/>
+		<Projects ActiveProject="C:\Sandbox\app\Server\Server.dproj"/>
 	</Default.Personality>
-=======
-  <Transactions>
-    <Transaction>2024.09.10 11:57:22.138,C:\Sandbox\Application\Client\TestClientServer.groupproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
-  </Transactions>
-  <Default.Personality>
-    <Projects ActiveProject="C:\Sandbox\Application\Client\Client.dproj"/>
-  </Default.Personality>
->>>>>>> 81c7b0ee25717941277237b4b1c587694f3fd6b7
 </BorlandProject>
