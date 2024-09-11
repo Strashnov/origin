@@ -57,18 +57,19 @@ type
     actSettings: TAction;
     actExit: TAction;
     actAbout: TAction;
+    lbiSwitch: TListBoxItem;
+    swtIPPORT: TSwitch;
     procedure lbiStyleClick(Sender: TObject);
     procedure lbiLanguageClick(Sender: TObject);
     procedure lbiRussianClick(Sender: TObject);
     procedure lbiEnglishClick(Sender: TObject);
     procedure lbiLightClick(Sender: TObject);
     procedure lbiDarkClick(Sender: TObject);
-    procedure edtIPChange(Sender: TObject);
-    procedure edtPortChange(Sender: TObject);
     procedure actExitExecute(Sender: TObject);
     procedure actAboutExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
     procedure actMainExecute(Sender: TObject);
+    procedure swtIPPORTSwitch(Sender: TObject);
   private
     { Private declarations }
   public
@@ -102,17 +103,6 @@ end;
 procedure TformMain.actSettingsExecute(Sender: TObject);
 begin
   tcMain.ActiveTab := tiSettings; // Open settings tab
-end;
-
-procedure TformMain.edtIPChange(Sender: TObject);
-begin
-  formMain.Caption := dmCompanents.IdTCPServer.Bindings.Add.IP; // IP address
-end;
-
-procedure TformMain.edtPortChange(Sender: TObject);
-begin
-  formMain.Caption := dmCompanents.IdTCPServer.Bindings.Add.Port.ToString;
-  // Port
 end;
 
 procedure TformMain.lbiDarkClick(Sender: TObject);
@@ -160,6 +150,25 @@ end;
 procedure TformMain.lbiStyleClick(Sender: TObject);
 begin
   tcMain.ActiveTab := tiStyle; // Open style tab
+end;
+
+procedure TformMain.swtIPPORTSwitch(Sender: TObject);
+begin
+  if swtIPPORT.IsChecked = True then
+  begin
+    lbiIP.Visible := False;
+    lbiPort.Visible := False;
+    dmCompanents.IdTCPServer.Bindings.Add.IP := edtIP.Text; // Set ip
+    dmCompanents.IdTCPServer.Bindings.Add.Port := edtPort.Text.ToInteger;
+    // Set port
+    dmCompanents.IdTCPServer.Active := True;
+  end
+  else
+  begin
+    lbiIP.Visible := True;
+    lbiPort.Visible := True;
+    dmCompanents.IdTCPServer.Active := False;
+  end;
 end;
 
 end.

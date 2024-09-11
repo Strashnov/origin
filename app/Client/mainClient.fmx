@@ -14587,7 +14587,7 @@ object formClient: TformClient
       Size.Height = 440.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 1
+      TabIndex = 3
       TabOrder = 6
       TabPosition = PlatformDefault
       Sizes = (
@@ -14654,7 +14654,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 74.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14709,10 +14709,6 @@ object formClient: TformClient
           DefaultItemStyles.GroupFooterStyle = ''
           Viewport.Width = 640.000000000000000000
           Viewport.Height = 364.000000000000000000
-          object ListBoxItem1: TListBoxItem
-            TabOrder = 0
-            Text = 'ListBoxItem1'
-          end
         end
       end
       object tiStyle: TTabItem
@@ -14770,7 +14766,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 63.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14850,7 +14846,7 @@ object formClient: TformClient
               Size.Height = 28.000000000000000000
               Size.PlatformDefault = False
               StyleLookup = 'switchstyle'
-              TabOrder = 46
+              TabOrder = 45
               OnSwitch = swtIPPORTSwitch
             end
           end
@@ -14866,7 +14862,7 @@ object formClient: TformClient
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 46
+              TabOrder = 45
               FilterChar = '0123456789.'
               Text = '192.168.0.107'
               Locked = True
@@ -14891,7 +14887,7 @@ object formClient: TformClient
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 46
+              TabOrder = 45
               FilterChar = '0123456789'
               Text = '7'
               Locked = True

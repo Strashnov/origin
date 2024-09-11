@@ -68,6 +68,7 @@ procedure TdmCompanents.IdTCPServerExecute(AContext: TIdContext);
 // Accept data from the client
 begin
   formMain.memMessageFromClient.Lines.Add(AContext.Connection.Socket.ReadLn());
+  AContext.Connection.Socket.WriteLn('Response from server...');
   AContext.Connection.Disconnect;
 end;
 

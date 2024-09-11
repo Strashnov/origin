@@ -27892,7 +27892,7 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 0
+      TabIndex = 1
       TabOrder = 2
       TabPosition = None
       Sizes = (
@@ -27911,7 +27911,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -27931,8 +27931,8 @@ object formMain: TformMain
           Size.PlatformDefault = False
           StyleLookup = 'memostyle'
           TabOrder = 0
-          Viewport.Width = 640.000000000000000000
-          Viewport.Height = 638.000000000000000000
+          Viewport.Width = 638.000000000000000000
+          Viewport.Height = 636.000000000000000000
         end
       end
       object tiSettings: TTabItem
@@ -27940,7 +27940,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -28001,8 +28001,33 @@ object formMain: TformMain
             TabOrder = 4
             Text = 'lbghTCP'
           end
-          object lbiIP: TListBoxItem
+          object lbiSwitch: TListBoxItem
             Position.Y = 137.000000000000000000
+            Size.Width = 640.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'listboxitemnodetail'
+            TabOrder = 7
+            Text = 'lbiSwitch'
+            object swtIPPORT: TSwitch
+              Align = FitRight
+              Locked = True
+              IsChecked = False
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              Position.X = 548.000000000000000000
+              Position.Y = 6.000000000000000000
+              Size.Width = 87.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'switchstyle'
+              TabOrder = 46
+              OnSwitch = swtIPPORTSwitch
+            end
+          end
+          object lbiIP: TListBoxItem
+            Position.Y = 177.000000000000000000
             Size.Width = 640.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
@@ -28013,7 +28038,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
+              TabOrder = 46
               FilterChar = '0123456789.'
               Locked = True
               Margins.Left = 50.000000000000000000
@@ -28023,11 +28048,10 @@ object formMain: TformMain
               Size.Width = 585.000000000000000000
               Size.Height = 30.000000000000000000
               Size.PlatformDefault = False
-              OnChange = edtIPChange
             end
           end
           object lbiPort: TListBoxItem
-            Position.Y = 177.000000000000000000
+            Position.Y = 217.000000000000000000
             Size.Width = 640.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
@@ -28038,7 +28062,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 45
+              TabOrder = 46
               FilterChar = '0123456789'
               Locked = True
               Margins.Left = 50.000000000000000000
@@ -28048,7 +28072,6 @@ object formMain: TformMain
               Size.Width = 585.000000000000000000
               Size.Height = 30.000000000000000000
               Size.PlatformDefault = False
-              OnChange = edtPortChange
             end
           end
         end

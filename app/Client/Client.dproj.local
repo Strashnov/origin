@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.620,C:\Sandbox\Application\Client\Client.dproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Sandbox\app\Client\main.fmx=C:\Sandbox\app\Client\mainClient.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Sandbox\Application\Client\Client.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Sandbox\Application\Client\main.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.126,=C:\Sandbox\Application\Client\Library\DistanceByCoordinates.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.145,C:\Sandbox\Application\Client\main.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.145,C:\Sandbox\Application\Client\main.fmx=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.818,C:\Sandbox\app\Client\mainClient.fmx=C:\Sandbox\app\Client\main.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Sandbox\app\Client\main.pas=C:\Sandbox\app\Client\mainClient.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Sandbox\Application\Client\main.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.853,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.818,C:\Sandbox\app\Client\mainClient.pas=C:\Sandbox\app\Client\main.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android64="emulator-5554" Android="emulator-5554"/>
+		<NoProfile Android64="" Android=""/>
 	</ActiveMobileDevice>
 </BorlandProject>

@@ -10,7 +10,8 @@ uses
   IdIntercept, IdCompressionIntercept, IdIOHandler, IdIOHandlerSocket,
   IdIOHandlerStack, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.MultiView, FMX.Objects,
-  FMX.Layouts, FMX.ListBox, FMX.TabControl, FMX.Edit;
+  FMX.Layouts, FMX.ListBox, FMX.TabControl, FMX.Edit, FMX.Memo.Types,
+  FMX.ScrollBox, FMX.Memo;
 
 type
   TformClient = class(TForm)
@@ -65,7 +66,6 @@ type
     cbTimeStamp: TCheckBox;
     layMessage: TLayout;
     lbMessage: TListBox;
-    ListBoxItem1: TListBoxItem;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -79,11 +79,12 @@ type
     procedure cbTimeStampChange(Sender: TObject);
   private
     { Private declarations }
-  public
-    { Public declarations }
+    messageStringServer: string;
     Xa, Ya, Xb, Yb: Single;
     TimeStamp: String;
-    increaseMessage: int64;
+    ClientMessage, ServerMessage: int64;
+  public
+    { Public declarations }
   end;
 
 var
@@ -118,72 +119,118 @@ end;
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
 var
-  messageString: string;
-  increaseListBoxItems: TListBoxItem;
-  increaseRectangel: TRectangle;
+  messageStringClient: string;
+  ClientListBoxItems, ServerListBoxItems: TListBoxItem;
+  ClientRectangel, ServerRectangel: TRectangle;
   increaseText: TText;
+  responseFromServer: TText;
 begin
 
   case tcMain.TabIndex of
     0:
-      messageString := btnCoordinats.Text;
+      messageStringClient := btnCoordinats.Text;
     1:
       begin
-        messageString := edtSendMessage.Text + ' ' + TimeStamp;
-        increaseMessage := increaseMessage + 1;
-        increaseListBoxItems := TListBoxItem.Create(lbMessage);
-        increaseListBoxItems.Parent := lbMessage;
-        increaseListBoxItems.Name := 'increaseListBoxItems' +
-          increaseMessage.ToString;
-        increaseListBoxItems.Height := 110;
-        increaseListBoxItems.Text := EmptyStr;
+        messageStringClient := edtSendMessage.Text + ' ' + TimeStamp;
+        begin
+          // Message client
+          ClientMessage := ClientMessage + 1;
+          ClientListBoxItems := TListBoxItem.Create(lbMessage);
+          ClientListBoxItems.Parent := lbMessage;
+          ClientListBoxItems.Name := 'ClientListBoxItems' +
+            ClientMessage.ToString;
+          ClientListBoxItems.Height := 110;
+          ClientListBoxItems.Text := EmptyStr;
 
-        increaseRectangel := TRectangle.Create(increaseListBoxItems);
-        increaseRectangel.Parent := increaseListBoxItems;
-        increaseRectangel.Name := 'increaseRectangel' +
-          increaseMessage.ToString;
-        increaseRectangel.Height := 100;
-        increaseRectangel.Width := 200;
-        increaseRectangel.Align := TAlignLayout.Left;
-        increaseRectangel.Margins.Left := 20;
-        increaseRectangel.Margins.Top := 5;
-        increaseRectangel.Margins.Bottom := 5;
-        increaseRectangel.XRadius := -15;
-        increaseRectangel.YRadius := 10;
-        increaseRectangel.Stroke.Kind := TBrushKind.None;
-        increaseRectangel.CornerType := TCornerType.Bevel;
-        increaseRectangel.Corners := [TCorner.BottomLeft];
-        increaseRectangel.Fill.Color := TAlphaColorRec.Lemonchiffon;
+          ClientRectangel := TRectangle.Create(ClientListBoxItems);
+          ClientRectangel.Parent := ClientListBoxItems;
+          ClientRectangel.Name := 'ClientMessage' + ClientMessage.ToString;
+          ClientRectangel.Height := 100;
+          ClientRectangel.Width := 200;
+          ClientRectangel.Align := TAlignLayout.Left;
+          ClientRectangel.Margins.Left := 20;
+          ClientRectangel.Margins.Top := 5;
+          ClientRectangel.Margins.Bottom := 5;
+          ClientRectangel.XRadius := -15;
+          ClientRectangel.YRadius := 10;
+          ClientRectangel.Stroke.Kind := TBrushKind.None;
+          ClientRectangel.CornerType := TCornerType.Bevel;
+          ClientRectangel.Corners := [TCorner.BottomLeft];
+          ClientRectangel.Fill.Color := TAlphaColorRec.Lemonchiffon;
 
-        increaseText := TText.Create(increaseRectangel);
-        increaseText.Parent := increaseRectangel;
-        increaseText.Name := 'increaseText' + increaseMessage.ToString;
-        increaseText.Align := TAlignLayout.Client;
-        increaseText.Margins.Bottom := 5;
-        increaseText.Margins.Left := 5;
-        increaseText.Margins.Right := 5;
-        increaseText.Margins.Top := 5;
-        increaseText.TextSettings.VertAlign := TTextAlign.Leading;
-        increaseText.TextSettings.HorzAlign := TTextAlign.Leading;
-        increaseText.TextSettings.WordWrap := True;
+          increaseText := TText.Create(ClientRectangel);
+          increaseText.Parent := ClientRectangel;
+          increaseText.Name := 'increaseText' + ClientMessage.ToString;
+          increaseText.Align := TAlignLayout.Client;
+          increaseText.Margins.Bottom := 5;
+          increaseText.Margins.Left := 5;
+          increaseText.Margins.Right := 5;
+          increaseText.Margins.Top := 5;
+          increaseText.TextSettings.VertAlign := TTextAlign.Leading;
+          increaseText.TextSettings.HorzAlign := TTextAlign.Leading;
+          increaseText.TextSettings.WordWrap := True;
 
-        increaseText.Text := messageString;
+          increaseText.Text := messageStringClient;
+        end;
+
+        if messageStringServer <> EmptyStr.Empty then
+        begin
+          // Message server
+          ServerMessage := ServerMessage + 1;
+          ServerListBoxItems := TListBoxItem.Create(lbMessage);
+          ServerListBoxItems.Parent := lbMessage;
+          ServerListBoxItems.Name := 'ServerListBoxItems' +
+            ServerMessage.ToString;
+          ServerListBoxItems.Height := 110;
+          ServerListBoxItems.Text := EmptyStr;
+
+          ServerRectangel := TRectangle.Create(ServerListBoxItems);
+          ServerRectangel.Parent := ServerListBoxItems;
+          ServerRectangel.Name := 'ServerListBoxItems' + ServerMessage.ToString;
+          ServerRectangel.Height := 100;
+          ServerRectangel.Width := 200;
+          ServerRectangel.Align := TAlignLayout.Right;
+          ServerRectangel.Margins.Right := 20;
+          ServerRectangel.Margins.Top := 5;
+          ServerRectangel.Margins.Bottom := 5;
+          ServerRectangel.XRadius := -15;
+          ServerRectangel.YRadius := 10;
+          ServerRectangel.Stroke.Kind := TBrushKind.None;
+          ServerRectangel.CornerType := TCornerType.Bevel;
+          ServerRectangel.Corners := [TCorner.TopRight];
+          ServerRectangel.Fill.Color := TAlphaColorRec.Lightskyblue;
+
+          responseFromServer := TText.Create(ServerRectangel);
+          responseFromServer.Parent := ServerRectangel;
+          responseFromServer.Name := 'ServerMessage' + ServerMessage.ToString;
+          responseFromServer.Align := TAlignLayout.Client;
+          responseFromServer.Margins.Bottom := 5;
+          responseFromServer.Margins.Left := 5;
+          responseFromServer.Margins.Right := 5;
+          responseFromServer.Margins.Top := 5;
+          responseFromServer.TextSettings.VertAlign := TTextAlign.Leading;
+          responseFromServer.TextSettings.HorzAlign := TTextAlign.Leading;
+          responseFromServer.TextSettings.WordWrap := True;
+          responseFromServer.Text := messageStringServer;
+        end;
       end;
   end;
 
   IdTCPClient.Connect;
   try
-    IdTCPClient.Socket.Writeln(messageString);
+    IdTCPClient.Socket.Writeln(messageStringClient);
+    messageStringServer := IdTCPClient.Socket.ReadLn();
   finally
     IdTCPClient.Disconnect;
   end;
+
 end;
 
 procedure TformClient.cbTimeStampChange(Sender: TObject);
 // Send the current time to the message
 begin
   if cbTimeStamp.IsChecked = False then
-    TimeStamp := ''
+    TimeStamp := EmptyStr.Empty
   else
   begin
     cbTimeStamp.IsChecked := True;
