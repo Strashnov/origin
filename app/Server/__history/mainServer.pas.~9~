@@ -71,7 +71,6 @@ type
     procedure actSettingsExecute(Sender: TObject);
     procedure actMainExecute(Sender: TObject);
     procedure swtIPPORTSwitch(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -152,11 +151,6 @@ end;
 procedure TformMain.lbiStyleClick(Sender: TObject);
 begin
   tcMain.ActiveTab := tiStyle; // Open style tab
-end;
-
-procedure TformMain.SpeedButton1Click(Sender: TObject);
-begin
-memMessageFromClient.Lines.Clear;
 end;
 
 procedure TformMain.swtIPPORTSwitch(Sender: TObject);

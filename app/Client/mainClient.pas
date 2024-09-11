@@ -132,6 +132,7 @@ begin
     1:
       begin
         messageStringClient := edtSendMessage.Text + ' ' + TimeStamp;
+        if edtSendMessage.Text <> EmptyStr.Empty then
         begin
           // Message client
           ClientMessage := ClientMessage + 1;
@@ -218,8 +219,10 @@ begin
 
   IdTCPClient.Connect;
   try
+    IdTCPClient.Socket.Open;
     IdTCPClient.Socket.Writeln(messageStringClient);
     messageStringServer := IdTCPClient.Socket.ReadLn();
+    IdTCPClient.Socket.Close;
   finally
     IdTCPClient.Disconnect;
   end;

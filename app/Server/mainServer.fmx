@@ -27885,6 +27885,17 @@ object formMain: TformMain
         Text = 'Server'
         TabOrder = 2
       end
+      object SpeedButton1: TSpeedButton
+        Align = Right
+        Position.X = 560.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'refreshtoolbutton'
+        Text = 'SpeedButton1'
+        TextSettings.Trimming = None
+        OnClick = SpeedButton1Click
+      end
     end
     object tcMain: TTabControl
       Align = Client
@@ -27892,7 +27903,7 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 2
       TabPosition = None
       Sizes = (
@@ -27911,7 +27922,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -27940,7 +27951,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
