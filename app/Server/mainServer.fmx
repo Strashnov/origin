@@ -27903,7 +27903,7 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 2
       TabPosition = None
       Sizes = (
@@ -27922,7 +27922,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -27937,13 +27937,36 @@ object formMain: TformMain
           DataDetectorTypes = []
           ReadOnly = True
           Align = Client
-          Size.Width = 640.000000000000000000
-          Size.Height = 638.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 601.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'memostyle'
           TabOrder = 0
-          Viewport.Width = 638.000000000000000000
-          Viewport.Height = 636.000000000000000000
+          Viewport.Width = 628.000000000000000000
+          Viewport.Height = 599.000000000000000000
+        end
+        object edtResponse: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'editstyle'
+          TabOrder = 1
+          Text = 'Response from server...'
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Hint = 'Response from server'
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 630.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Response from server'
+          ParentShowHint = False
+          ShowHint = True
         end
       end
       object tiSettings: TTabItem
@@ -27951,7 +27974,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False

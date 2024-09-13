@@ -26,7 +26,7 @@ type
     FDConnection: TFDConnection;
     FDTransaction: TFDTransaction;
     FDQuery: TFDQuery;
-    FDQueryNAME: TWideStringField;
+    FDQueryDATA: TStringField;
     procedure ChangeStyleLight; // Light theme
     procedure ChangeStyleDark; // Dark theme
     procedure IdTCPServerExecute(AContext: TIdContext);
@@ -79,15 +79,14 @@ begin
   sMessage := AContext.Connection.Socket.ReadLn();
   formMain.memMessageFromClient.Lines.Add(sMessage);
 
-   FDQuery.Open();
-   FDQuery.Insert;
+  FDQuery.Open();
+  FDQuery.Insert;
 
-   FDQuery.FieldByName('NAME').AsString := sMessage;
-   FDQuery.Post;
+  FDQuery.FieldByName('DATA').AsString := sMessage; // Add data to database
+  FDQuery.Post;
 
-  AContext.Connection.Socket.WriteLn('Response from server...');
+  AContext.Connection.Socket.WriteLn(formMain.edtResponse.Text);
   AContext.Connection.Disconnect;
-
 end;
 
 end.

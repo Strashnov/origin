@@ -60,6 +60,7 @@ type
     lbiSwitch: TListBoxItem;
     swtIPPORT: TSwitch;
     SpeedButton1: TSpeedButton;
+    edtResponse: TEdit;
     procedure lbiStyleClick(Sender: TObject);
     procedure lbiLanguageClick(Sender: TObject);
     procedure lbiRussianClick(Sender: TObject);
