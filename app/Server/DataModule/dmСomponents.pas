@@ -7,7 +7,12 @@ uses
   System.ImageList, FMX.ImgList, FMX.Types, FMX.Controls, IdBaseComponent,
   IdComponent, IdCustomTCPServer, IdTCPServer, FMX.Forms, IdServerIOHandler,
   IdServerIOHandlerSocket, IdServerIOHandlerStack, IdIntercept,
-  IdCompressionIntercept, IdContext, libChangeStyle;
+  IdCompressionIntercept, IdContext, libChangeStyle, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.FMXUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  FireDAC.Phys.IB, FireDAC.Phys.IBDef, FireDAC.VCLUI.Wait;
 
 type
   TdmCompanents = class(TDataModule)
@@ -18,14 +23,18 @@ type
     Language: TLang;
     IdServerCompressionIntercept: TIdServerCompressionIntercept;
     IdServerIOHandlerStack: TIdServerIOHandlerStack;
+    FDConnection: TFDConnection;
+    FDTransaction: TFDTransaction;
+    FDQuery: TFDQuery;
+    FDQueryNAME: TWideStringField;
     procedure ChangeStyleLight; // Light theme
     procedure ChangeStyleDark; // Dark theme
     procedure IdTCPServerExecute(AContext: TIdContext);
   private
     { Private declarations }
+    sMessage: string;
   public
     { Public declarations }
-
   end;
 
 var
@@ -67,9 +76,18 @@ end;
 procedure TdmCompanents.IdTCPServerExecute(AContext: TIdContext);
 // Accept data from the client
 begin
-  formMain.memMessageFromClient.Lines.Add(AContext.Connection.Socket.ReadLn());
+  sMessage := AContext.Connection.Socket.ReadLn();
+  formMain.memMessageFromClient.Lines.Add(sMessage);
+
+   FDQuery.Open();
+   FDQuery.Insert;
+
+   FDQuery.FieldByName('NAME').AsString := sMessage;
+   FDQuery.Post;
+
   AContext.Connection.Socket.WriteLn('Response from server...');
   AContext.Connection.Disconnect;
+
 end;
 
 end.
