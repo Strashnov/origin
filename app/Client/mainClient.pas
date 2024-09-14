@@ -66,6 +66,13 @@ type
     cbTimeStamp: TCheckBox;
     layMessage: TLayout;
     lbMessage: TListBox;
+    Language: TLang;
+    tiLanguage: TTabItem;
+    actLanguage: TAction;
+    actStyle: TAction;
+    lbLanguage: TListBox;
+    lbiRussian: TListBoxItem;
+    lbiEnglish: TListBoxItem;
     procedure pbMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
     procedure pbMainMouseUp(Sender: TObject; Button: TMouseButton;
@@ -77,6 +84,8 @@ type
     procedure actSettingsExecute(Sender: TObject);
     procedure actMainExecute(Sender: TObject);
     procedure cbTimeStampChange(Sender: TObject);
+    procedure actLanguageExecute(Sender: TObject);
+    procedure actStyleExecute(Sender: TObject);
   private
     { Private declarations }
     messageStringServer: string;
@@ -101,6 +110,11 @@ begin
   Application.Terminate; // Close programms
 end;
 
+procedure TformClient.actLanguageExecute(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiLanguage; // Open language tab
+end;
+
 procedure TformClient.actMainExecute(Sender: TObject);
 begin
   tcMain.ActiveTab := tiMain; // Open main tab
@@ -114,6 +128,11 @@ end;
 procedure TformClient.actSettingsExecute(Sender: TObject);
 begin
   tcMain.ActiveTab := tiSettings; // Open settings tab
+end;
+
+procedure TformClient.actStyleExecute(Sender: TObject);
+begin
+  tcMain.ActiveTab := tiStyle; // Opent style tab
 end;
 
 procedure TformClient.btnCoordinatsClick(Sender: TObject);

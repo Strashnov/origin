@@ -79,11 +79,12 @@ type
     procedure cbTimeStampChange(Sender: TObject);
   private
     { Private declarations }
-  public
-    { Public declarations }
+    messageStringServer: string;
     Xa, Ya, Xb, Yb: Single;
     TimeStamp: String;
     ClientMessage, ServerMessage: int64;
+  public
+    { Public declarations }
   end;
 
 var
@@ -118,7 +119,7 @@ end;
 procedure TformClient.btnCoordinatsClick(Sender: TObject);
 // Send data to the server
 var
-  messageStringClient, messageStringServer: string;
+  messageStringClient: string;
   ClientListBoxItems, ServerListBoxItems: TListBoxItem;
   ClientRectangel, ServerRectangel: TRectangle;
   increaseText: TText;
@@ -131,6 +132,7 @@ begin
     1:
       begin
         messageStringClient := edtSendMessage.Text + ' ' + TimeStamp;
+        if edtSendMessage.Text <> EmptyStr.Empty then
         begin
           // Message client
           ClientMessage := ClientMessage + 1;
@@ -172,6 +174,7 @@ begin
           increaseText.Text := messageStringClient;
         end;
 
+        if messageStringServer <> EmptyStr.Empty then
         begin
           // Message server
           ServerMessage := ServerMessage + 1;
@@ -209,7 +212,6 @@ begin
           responseFromServer.TextSettings.VertAlign := TTextAlign.Leading;
           responseFromServer.TextSettings.HorzAlign := TTextAlign.Leading;
           responseFromServer.TextSettings.WordWrap := True;
-
           responseFromServer.Text := messageStringServer;
         end;
       end;
@@ -217,8 +219,10 @@ begin
 
   IdTCPClient.Connect;
   try
+    IdTCPClient.Socket.Open;
     IdTCPClient.Socket.Writeln(messageStringClient);
     messageStringServer := IdTCPClient.Socket.ReadLn();
+    IdTCPClient.Socket.Close;
   finally
     IdTCPClient.Disconnect;
   end;

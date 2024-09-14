@@ -14587,10 +14587,12 @@ object formClient: TformClient
       Size.Height = 440.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 1
+      TabIndex = 3
       TabOrder = 6
       TabPosition = PlatformDefault
       Sizes = (
+        640s
+        414s
         640s
         414s
         640s
@@ -14654,7 +14656,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 74.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14766,7 +14768,7 @@ object formClient: TformClient
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 63.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -14802,6 +14804,7 @@ object formClient: TformClient
             StyleLookup = 'listboxitemnodetail'
             TabOrder = 1
             Text = 'Style'
+            OnClick = actStyleExecute
           end
           object lbghLanguage: TListBoxGroupHeader
             Position.Y = 59.000000000000000000
@@ -14818,6 +14821,7 @@ object formClient: TformClient
             StyleLookup = 'listboxitemnodetail'
             TabOrder = 3
             Text = 'Language'
+            OnClick = actLanguageExecute
           end
           object lbghTCP: TListBoxGroupHeader
             Position.Y = 118.000000000000000000
@@ -14902,6 +14906,19 @@ object formClient: TformClient
           end
         end
       end
+      object tiLanguage: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = False
+        Size.Width = 79.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'tabitemstyle'
+        TabOrder = 0
+        Text = 'tiLanguage'
+      end
     end
   end
   object ActionList: TActionList
@@ -14935,6 +14952,20 @@ object formClient: TformClient
       ImageIndex = 3
       OnExecute = actMainExecute
       ImageIndex = 3
+    end
+    object actLanguage: TAction
+      Category = 'File'
+      Text = 'Language'
+      ImageIndex = 4
+      OnExecute = actLanguageExecute
+      ImageIndex = 4
+    end
+    object actStyle: TAction
+      Category = 'File'
+      Text = 'Style'
+      ImageIndex = 5
+      OnExecute = actStyleExecute
+      ImageIndex = 5
     end
   end
   object ImageList: TImageList
@@ -15216,6 +15247,68 @@ object formClient: TformClient
             FileName = 'C:\Sandbox\fileProject\icon\crowd_40px.png'
           end>
         Name = 'Main'
+      end
+      item
+        MultiResBitmap.Height = 40
+        MultiResBitmap.Width = 40
+        MultiResBitmap = <
+          item
+            Width = 40
+            Height = 40
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000280000002808060000008CFEB8
+              6D0000000473424954080808087C08648800000389494441545885ED97CB4F53
+              591CC73F87BE8162698B038A8C086D953146C66408A2CEC6049D8CD185FF83F8
+              485CE8C23FC0856B132391A5CB4934912831BA98312AD33621C6C72855020CA5
+              1152699157A08FEBE2B6166D6FEF6D7B631CC7EFE69EDCF3FAE4FB3BE777CE81
+              AF5C02A0F7D2B0F42526BB7BA15B94DAC7982DF4F775E94BF399FAFAFD65F5AB
+              D29943777D07AC546501F6F5FBCB5E53A5EADB74F04BCA58AC522D8C4AF57AA6
+              ACFFB6835A9DB8FED7388F5ECE72705713C7F7B6E802969526079F4CCCB19A48
+              15AC9B5F4A10781D4508E8D9D1A02B1CA83808702B10E6CEC834BE4D759C3AEC
+              C562327C527FC3FF2F89649ACE56274DF5B682630C8D4480D2CFFCBB17BA852A
+              60B7CFCDA3D1594623EFB97C7B949387BCD45AE56ECF27E3044251CCC62AC5D0
+              0E8D44F8F34594C3FB3BB15A4C9AE16EDE0F001A42DCB0C1CAB9231D386ACC8C
+              BD5DE0E21FCF783619632ABAC4C0FD3748C0D1AE665C764B5EDF5BC1300F5EBE
+              A367CFF692E0D64BD541808D0E2BE78F753070EF0D93B38B5C190A6130085229
+              899D3F3AF8B5E3878270C3A118DD9D3E2CE6F2E0A08434E3B65B38FBBB8F26A7
+              BCCE522979393D9F8C736620980FF7BA72385071309596585C4912892DF3CFD4
+              3C7F87A22CAC2410C02F5E3789649AF0DC32B1C5B58F7D06B370BB2B8753053C
+              7D2D90F7AFBDD1CED1AE663C4D75797583C1308F758453051440B5D548A3C346
+              EBC65ABABC2EB6B86B0AB61D0C86795C60CDED6B11FCD490BBE93F9D91180E6B
+              CF364501AF6A3C4994E00C02DA9D9F3E433C2E817F5A22AD91B1E2B358090EA0
+              6583C092C9EBAB49F96B33C226BBF6B7534580C5E0007C6EF92B010FA7729679
+              5DDAE7281B500DAEDA045BEA64A76697602C26B19271B1D52130699CB92CC0C1
+              6018FF589C9E9FB72BEED6B67A41552692E33109498289B8ECA2B10A5AEBB585
+              F9E32629F58DF1DB814E4C26E53DE675E500B260E371D89109BBC709A1771A01
+              4B7DF1F75E1A968AE539970DDCD572796E05E657E572E4BDC45A4A6036C0E63A
+              418D496229A101506F79D6B9E7B4C1893DF92B49006D4EC1D399E2F946F72BBF
+              2890FB94E4D1D04E77C066BBA046E329E7AE961D2E26DD43BC3EC7291D6BBD6D
+              82AD0ED9BD76A72030AD1C665D1D341BE41C97D578BCF0C413F15CD9E314140B
+              B4AE80DBEA0586CC88CB0998592CDC6E623E7716D79AA1D1AE3CA6AE217E1595
+              781555BF05AC26616024AD69CCAFFEE1FE1DB05295BD06B3EFD6FFBD3E007817
+              2EB5182954E20000000049454E44AE426082}
+            FileName = 'C:\Sandbox\fileProject\icon\translation_40px.png'
+          end>
+        Name = 'Language'
+      end
+      item
+        MultiResBitmap.Height = 40
+        MultiResBitmap.Width = 40
+        MultiResBitmap = <
+          item
+            Width = 40
+            Height = 40
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000280000002808060000008CFEB8
+              6D0000000473424954080808087C08648800000093494441545885ED98B10D80
+              300C0403621386404C00F4EC41CB0850320D6202588259428762A77C11ACE8AF
+              B3BEB958D617718E644E110EDD72FABF44428EB97DBD2A1D4E6323E6A1166F70
+              FBED3FCDFBF51273A905AD414194E80653DF9CCE35E637484194E80653DF9CCE
+              37E5637E831444610FA25010853D88424114F6200A0551D883281444610FA250
+              10C5FC0726C99E07E7D96A068949A8F00000000049454E44AE426082}
+            FileName = 'C:\Sandbox\fileProject\icon\opacity_40px.png'
+          end>
+        Name = 'Style'
       end>
     Destination = <
       item
@@ -15249,6 +15342,22 @@ object formClient: TformClient
             SourceRect.Right = 40.000000000000000000
             SourceRect.Bottom = 40.000000000000000000
           end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Language'
+            SourceRect.Right = 40.000000000000000000
+            SourceRect.Bottom = 40.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Style'
+            SourceRect.Right = 40.000000000000000000
+            SourceRect.Bottom = 40.000000000000000000
+          end>
       end>
     Left = 512
     Top = 384
@@ -15277,5 +15386,9 @@ object formClient: TformClient
     CompressionLevel = 0
     Left = 104
     Top = 376
+  end
+  object Language: TLang
+    Left = 584
+    Top = 386
   end
 end

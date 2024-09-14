@@ -27903,7 +27903,7 @@ object formMain: TformMain
       Size.Height = 638.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabcontrolstyle'
-      TabIndex = 0
+      TabIndex = 2
       TabOrder = 2
       TabPosition = None
       Sizes = (
@@ -27922,7 +27922,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -27945,8 +27945,8 @@ object formMain: TformMain
           Size.PlatformDefault = False
           StyleLookup = 'memostyle'
           TabOrder = 0
-          Viewport.Width = 628.000000000000000000
-          Viewport.Height = 599.000000000000000000
+          Viewport.Width = 630.000000000000000000
+          Viewport.Height = 601.000000000000000000
         end
         object edtResponse: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -28056,7 +28056,7 @@ object formMain: TformMain
               Size.Height = 28.000000000000000000
               Size.PlatformDefault = False
               StyleLookup = 'switchstyle'
-              TabOrder = 46
+              TabOrder = 45
               OnSwitch = swtIPPORTSwitch
             end
           end
@@ -28072,7 +28072,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 46
+              TabOrder = 45
               FilterChar = '0123456789.'
               Text = '192.168.0.107'
               Locked = True
@@ -28097,7 +28097,7 @@ object formMain: TformMain
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 46
+              TabOrder = 45
               FilterChar = '0123456789'
               Text = '7'
               Locked = True
@@ -28117,7 +28117,7 @@ object formMain: TformMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
